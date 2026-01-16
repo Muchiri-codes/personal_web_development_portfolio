@@ -1,4 +1,3 @@
-// src/data/portfolio.ts
 
 import { Code, Paintbrush, Layout } from 'lucide-react';
 import React from 'react';
@@ -15,8 +14,8 @@ export const HERO_CONTENT = {
   description: "I bridge the gap between complex code and elegant design. A full-spectrum creator specializing in the modern web.",
   imagePath: "/your-portrait.jpg",
   socials: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername"
+    github: "https://github.com/Muchiri-codes",
+    linkedin: "https://linkedin.com/in/John_Muchiri"
   }
 };
 
@@ -27,13 +26,14 @@ export const ABOUT_CONTENT = {
     "Today, I help businesses solve complex problems through clean code and user-centric design. Whether it's building a high-performance Next.js application or crafting a brand identity, I focus on quality and impact."
   ],
   stats: [
-    { label: "Years Exp.", value: "5+" },
-    { label: "Projects", value: "120+" }
+    { label: "Years Exp.", value: "2+" },
+    { label: "Projects", value: "30+" }
   ],
   experience: [
-    { year: "2023 - Present", role: "Senior Web Developer", company: "Digital Agency X" },
-    { year: "2021 - 2023", role: "Web Designer", company: "Creative Studio Y" },
-    { year: "2019 - 2021", role: "Graphic Designer", company: "Startup Z" },
+    { year: "In Progress", role: "Web mapping", company: "Educational >> Commercial" },
+    { year: "08/2024 - Present", role: "Full stack Web Developer", company: "Freelancing + Personal websites" },
+    { year: "01/2024 - 08/2024", role: "Web Designer", company: "Freelancing" },
+    { year: "2023 - 2024", role: "Graphic Designer", company: "Freelancing / Private" },
   ]
 };
 
@@ -87,4 +87,12 @@ export const TECH_STACK = [
   { name: "GitHub", icon: SiGithub, color: "#ffffff" },
   { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
   { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+]
+
+export const CONTACT =[
+  {email: "muchirijohn0018@gmail.com"},
+   {location :"Remote/ Nyeri, Nakuru; Kenya"},
+   {linkedIn:"https://www.linkedin.com/in/john-muchiri-3ba55724b/"},
+   {twitter:""},
+   {github:""}
 ]

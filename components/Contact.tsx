@@ -1,4 +1,8 @@
+"use client"
+
+import {CONTACT} from '@/app/data/portfolio'
 import React from 'react';
+import {handleInquirySubmit} from '@/components/handleSubmit'
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
 export const Contact = () => {
@@ -34,7 +38,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-500 uppercase">Email</p>
-                  <p className="text-white font-medium">hello@yourdomain.com</p>
+                  <p className="text-white font-medium">muchirijohn0018@gmail.com</p>
                 </div>
               </div>
 
@@ -43,8 +47,8 @@ export const Contact = () => {
                   <MapPin className="w-5 h-5 text-emerald-500" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-500 uppercase">Location</p>
-                  <p className="text-white font-medium">Remote / New York, NY</p>
+                  <p className="text-xs font-bold text-gray-500 uppercase">LOCATION</p>
+                  <p className="text-white font-medium">Remote || Nyeri, Kenya</p>
                 </div>
               </div>
             </div>
@@ -65,20 +69,26 @@ export const Contact = () => {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <form className="p-8 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
+            <form 
+            onSubmit={handleInquirySubmit}
+            className="p-8 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-500 uppercase ml-1">Name</label>
                   <input 
+                  name='name'
                     type="text" 
-                    placeholder="John Doe"
+                    placeholder="your name here..."
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-emerald-500/50 transition-all"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-500 uppercase ml-1">Email</label>
                   <input 
+                   name='email'
                     type="email" 
+                    required
                     placeholder="john@example.com"
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-emerald-500/50 transition-all"
                   />
@@ -88,7 +98,9 @@ export const Contact = () => {
               <div className="space-y-2">
                 <label className="text-xs font-bold text-gray-500 uppercase ml-1">Subject</label>
                 <input 
+                name='subject'
                   type="text" 
+                  required
                   placeholder="Project Inquiry"
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-emerald-500/50 transition-all"
                 />
@@ -97,13 +109,16 @@ export const Contact = () => {
               <div className="space-y-2">
                 <label className="text-xs font-bold text-gray-500 uppercase ml-1">Message</label>
                 <textarea 
+                  name='message'
                   rows={5}
                   placeholder="Tell me about your project..."
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-emerald-500/50 transition-all resize-none"
                 />
               </div>
 
-              <button className="w-full group bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]">
+              <button 
+              type='submit'
+              className="w-full group bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]">
                 <span>Send Message</span>
                 <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
