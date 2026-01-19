@@ -1,11 +1,12 @@
 "use client"
-
-//import { useFormStatus } from "react-dom";
-import {submitToMongo} from '@/app/action'
+import {submitToMongo} from '@/app/action';
+import { useActionState } from 'react';
 import {handleInquirySubmit} from '@/components/handleSubmit'
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
-export const Contact = () => {
+
+const Contact = () => {
+  const [state, formAction, pending] = useActionState(submitToMongo, null);
   return (
     <section id="contact" className="relative py-24 bg-[#0a0a0a]">
       {/* Decorative Gradient Flare */}
@@ -70,9 +71,14 @@ export const Contact = () => {
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
             <form 
-            action={submitToMongo}
+            action={formAction}
             onSubmit={handleInquirySubmit}
             className="p-8 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
+              {state?.success && (
+                <p className="text-emerald-500 font-bold text-center">
+                  Message sent successfully!
+                </p>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-500 uppercase ml-1">Name</label>
@@ -132,3 +138,5 @@ export const Contact = () => {
     </section>
   );
 };
+
+export default Contact;
