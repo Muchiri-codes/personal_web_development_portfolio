@@ -1,7 +1,7 @@
 "use client"
 
-import {CONTACT} from '@/app/data/portfolio'
-import React from 'react';
+//import { useFormStatus } from "react-dom";
+import {submitToMongo} from '@/app/action'
 import {handleInquirySubmit} from '@/components/handleSubmit'
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
@@ -70,6 +70,7 @@ export const Contact = () => {
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
             <form 
+            action={submitToMongo}
             onSubmit={handleInquirySubmit}
             className="p-8 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -118,6 +119,7 @@ export const Contact = () => {
 
               <button 
               type='submit'
+              disabled={pending}
               className="w-full group bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]">
                 <span>Send Message</span>
                 <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
