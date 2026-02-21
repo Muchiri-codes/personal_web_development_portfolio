@@ -1,6 +1,4 @@
 "use client";
-
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, Linkedin, Twitter, ArrowUp, Mail, Heart } from 'lucide-react';
@@ -13,7 +11,7 @@ export const Footer = () => {
   return (
     <footer className="bg-[#050505] border-t border-white/5 pt-20 pb-10 relative overflow-hidden">
       {/* Background Accent */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1px bg-linear-to-r from-transparent via-emerald-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
@@ -63,10 +61,12 @@ export const Footer = () => {
             <div className="relative group">
               <input 
                 type="email" 
+                name='email'
                 placeholder="Your email address"
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm text-white focus:outline-none focus:border-emerald-500/50 transition-all"
               />
-              <button className="absolute right-2 top-2 bottom-2 px-4 bg-emerald-500 text-black rounded-xl text-xs font-bold hover:bg-emerald-400 transition-colors">
+              <button className="absolute right-2 top-2 bottom-2 px-4 bg-emerald-500 text-black rounded-xl text-xs font-bold hover:bg-emerald-400 transition-colors"
+              type='submit'>
                 Join
               </button>
             </div>

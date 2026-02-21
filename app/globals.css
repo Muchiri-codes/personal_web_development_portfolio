@@ -11,7 +11,7 @@
 /* Force the body to be the dark color and remove any browser margin */
 body {
   color: rgb(var(--foreground-rgb));
-  background: #0a0a0a; /* Your deep black theme */
+  background: #0a0a0a;
   margin: 0;
   padding: 0;
 }

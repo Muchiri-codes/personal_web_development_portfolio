@@ -1,16 +1,17 @@
-"use client"
-import {submitToMongo} from '@/app/action';
-import { useActionState } from 'react';
-import {handleInquirySubmit} from '@/components/handleSubmit'
+"use client";
+
+import { useRef } from 'react';
+import { handleFormSubmission } from '@/action/email-submission';
+
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
 
 const Contact = () => {
-  const [state, formAction, pending] = useActionState(submitToMongo, null);
+const formRef = useRef<HTMLFormElement>(null);
   return (
     <section id="contact" className="relative py-24 bg-[#0a0a0a]">
       {/* Decorative Gradient Flare */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-100 h-100 bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -71,14 +72,14 @@ const Contact = () => {
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
             <form 
-            action={formAction}
-            onSubmit={handleInquirySubmit}
+            ref={formRef}
+            action ={async (formData) =>{
+              const result = await handleFormSubmission(formData);
+              if (result.success) alert ("stored in DB and email sent!");
+              formRef.current?.reset();
+            }}
             className="p-8 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
-              {state?.success && (
-                <p className="text-emerald-500 font-bold text-center">
-                  Message sent successfully!
-                </p>
-              )}
+             
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-500 uppercase ml-1">Name</label>
@@ -125,7 +126,6 @@ const Contact = () => {
 
               <button 
               type='submit'
-              disabled={pending}
               className="w-full group bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]">
                 <span>Send Message</span>
                 <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
