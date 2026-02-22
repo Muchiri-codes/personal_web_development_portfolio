@@ -72,6 +72,10 @@ export const SERVICES_LIST = [
   { title: "Visual Branding", desc: "Defining your identity through color, type, and logos.", category: "Graphics", img: "/visual_branding.jpeg" },
   { title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations.", category: "Graphics", img: "/motion_graphics.mp4" },
   { title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals.", category: "Graphics", img: "/digital_assets.jpeg" },
+
+  //web mapping
+  { title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats.", category: "Mapping", img: "/web_mapping.jpeg" },
+
 ];
 export const TECH_STACK = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
