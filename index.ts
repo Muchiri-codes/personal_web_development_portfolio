@@ -11,6 +11,8 @@ async function main() {
   console.log(request); 
 }
 
+
+
 main()
   .then(async () => {
     await db.$disconnect();

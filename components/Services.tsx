@@ -13,20 +13,30 @@ export const Services = () => {
 
         {/* 9-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES_LIST.map((service, index) => (
-            <div 
-              key={index} 
+          {SERVICES_LIST.map((service: any, index) => (
+            <div
+              key={index}
               className="group relative aspect-4/5 rounded-4xl overflow-hidden border border-white/5 bg-[#111] cursor-default"
             >
               {/* Image Holder */}
               <div className="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-110">
-                {/* Replace with actual image tags later */}
                 <div className="w-full h-full bg-linear-to-b from-transparent to-black/90 absolute z-10" />
-                <img 
-                  src={service.img} 
-                  alt={service.title}
-                  className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700"
-                />
+                {/\.(mp4|webm|ogg)$/i.test(service.img) ? (
+                  <video
+                    src={service.img}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700"
+                  />
+                ) : (
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700"
+                  />
+                )}
               </div>
 
               {/* Floating Text Content */}

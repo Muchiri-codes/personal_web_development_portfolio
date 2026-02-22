@@ -1,9 +1,21 @@
 "use client";
+import { handleSubmit } from '@/action/handleNetworking'; 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, Linkedin, Twitter, ArrowUp, Mail, Heart } from 'lucide-react';
 
 export const Footer = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const onSubmit = async(e: React.FormEvent<HTMLFormElement>) =>{
+    e.preventDefault();
+    await handleSubmit(name, email);
+    setName('');
+    setEmail('');
+  }
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -15,7 +27,7 @@ export const Footer = () => {
 
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-          
+
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-6">
             <Link href="#home" className="flex items-center gap-3 group">
@@ -31,7 +43,7 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-500 max-w-sm leading-relaxed">
-              A multidisciplinary developer and designer focused on crafting high-performance 
+              A multidisciplinary developer and designer focused on crafting high-performance
               digital experiences with a touch of emerald precision.
             </p>
             <div className="flex gap-4">
@@ -59,16 +71,36 @@ export const Footer = () => {
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Stay Connected</h4>
             <div className="relative group">
-              <input 
-                type="email" 
-                name='email'
-                placeholder="Your email address"
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm text-white focus:outline-none focus:border-emerald-500/50 transition-all"
-              />
-              <button className="absolute right-2 top-2 bottom-2 px-4 bg-emerald-500 text-black rounded-xl text-xs font-bold hover:bg-emerald-400 transition-colors"
-              type='submit'>
-                Join
-              </button>
+              <form
+                onSubmit={onSubmit}
+                className="p-5 md:p-7 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-5 max-w-md mx-auto"
+              >
+                <input
+                  type="name"
+                  value={name}
+                  onChange={(e) =>setName(e.target.value)}
+                  placeholder="Your name"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm text-white focus:outline-none focus:border-emerald-500/50 transition-all"
+                />
+
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) =>setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm text-white focus:outline-none focus:border-emerald-500/50 transition-all"
+                />
+
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="px-8 py-3 bg-emerald-500 text-black rounded-xl text-xl font-bold hover:bg-emerald-400 transition-colors"
+                  >
+                    Join
+                  </button>
+                </div>
+              </form>
+
             </div>
             <p className="text-[10px] text-gray-600 uppercase font-bold tracking-widest flex items-center gap-2">
               <Mail className="w-3 h-3" /> No spam, just pure updates.
@@ -81,12 +113,12 @@ export const Footer = () => {
           <p className="text-gray-600 text-xs font-medium flex items-center gap-2">
             © {new Date().getFullYear()} All rights reserved. Made with <Heart className="w-3 h-3 text-emerald-500" /> using Next.js.
           </p>
-          
-          <button 
+
+          <button
             onClick={scrollToTop}
             className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest group"
           >
-            Back to top 
+            Back to top
             <div className="p-2 rounded-full border border-white/10 group-hover:border-emerald-500/50 transition-colors">
               <ArrowUp className="w-3 h-3" />
             </div>

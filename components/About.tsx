@@ -16,9 +16,12 @@ export const About = () => {
             <div className="relative group">
               <div className="aspect-square rounded-3xl overflow-hidden bg-[#111] border border-white/5">
                 {/* Image Placeholder */}
-                <img 
-                  src="/about-secondary.jpg" 
-                  alt="Creative Process" 
+                <video 
+                  src="/creative_process.mp4" 
+                  muted
+                  autoPlay 
+                  loop
+                  playsInline
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 opacity-80 group-hover:opacity-100"
                 />
               </div>

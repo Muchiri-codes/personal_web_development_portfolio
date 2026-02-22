@@ -1,5 +1,5 @@
 
-import { Code, Paintbrush, Layout } from 'lucide-react';
+import { Code, Paintbrush, Layout, Video } from 'lucide-react';
 import React from 'react';
 import { 
   SiReact, SiNextdotjs, SiJavascript, SiTypescript, 
@@ -12,7 +12,7 @@ export const HERO_CONTENT = {
   title: "Crafting digital",
   titleGradient: "experiences.",
   description: "I bridge the gap between complex code and elegant design. A full-spectrum creator specializing in the modern web.",
-  imagePath: "/your-portrait.jpg",
+  imagePath: "/profile.jpeg",
   socials: {
     github: "https://github.com/Muchiri-codes",
     linkedin: "https://linkedin.com/in/John_Muchiri"
@@ -59,19 +59,19 @@ export const SERVICES = [
 ];
 export const SERVICES_LIST = [
   // Web Development
-  { title: "Fullstack Apps", desc: "Building robust Next.js applications with scalable backends.", category: "Development", img: "/dev1.jpg" },
-  { title: "API Integration", desc: "Connecting seamless data flows between 3rd party services.", category: "Development", img: "/dev2.jpg" },
-  { title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence.", category: "Development", img: "/dev3.jpg" },
+  { title: "Fullstack Apps", desc: "Building robust Next.js applications with scalable backends.", category: "Development", img: "/fullstack.png" },
+  { title: "API Integration", desc: "Connecting seamless data flows between 3rd party services.", category: "Development", img: "/api.jpg" },
+  { title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence.", category: "Development", img: "/optimization.png" },
   
   // Web Design
-  { title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow.", category: "Design", img: "/design1.jpg" },
-  { title: "Design Systems", desc: "Modular component libraries for brand consistency.", category: "Design", img: "/design2.jpg" },
-  { title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", category: "Design", img: "/design3.jpg" },
+  { title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow.", category: "Design", img: "/uiux.mp4" },
+  { title: "Design Systems", desc: "Modular component libraries for brand consistency.", category: "Design", img: "/system_design.mp4" },
+  { title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", category: "Design", img: "/responsive_layout.mp4" },
 
   // Graphics Design
-  { title: "Visual Branding", desc: "Defining your identity through color, type, and logos.", category: "Graphics", img: "/graph1.jpg" },
-  { title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations.", category: "Graphics", img: "/graph2.jpg" },
-  { title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals.", category: "Graphics", img: "/graph3.jpg" },
+  { title: "Visual Branding", desc: "Defining your identity through color, type, and logos.", category: "Graphics", img: "/visual_branding.jpeg" },
+  { title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations.", category: "Graphics", img: "/motion_graphics.mp4" },
+  { title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals.", category: "Graphics", img: "/digital_assets.jpeg" },
 ];
 export const TECH_STACK = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
