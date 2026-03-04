@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"; // Added Viewport import
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "full stack web developer based in Nyeri, Kenya",
 };
 
-// This handles the "Notch" and mobile scaling specifically
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
