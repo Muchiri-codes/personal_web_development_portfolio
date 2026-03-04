@@ -18,33 +18,48 @@ export const Services = () => {
           {SERVICES_LIST.map((service: any, index) => (
             <div
               key={index}
-              onClick={() => setSelectedService(service)} //opens a modal
-              className="group relative aspect-4/5 rounded-4xl overflow-hidden border border-white/5 bg-[#111] cursor-default"
+              onClick={() => setSelectedService(service)}
+              className="group relative aspect-4/5 rounded-4xl overflow-hidden border border-white/5 bg-[#111] cursor-pointer"
             >
-
+              {/* IMAGE/VIDEO BACKGROUND */}
               <div className="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-110">
-                <div className="w-full h-full bg-linear-to-b from-transparent to-black/90 absolute z-10" />
+                <div className="w-full h-full bg-linear-to-b from-transparent via-black/20 to-black/90 absolute z-10" />
                 {/\.(mp4|webm|ogg)$/i.test(service.img) ? (
                   <video
                     src={service.img}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover opacity-100 group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700"
+                    autoPlay muted loop playsInline
+                    className="w-full h-full object-cover opacity-100 transition-all duration-700"
                   />
                 ) : (
                   <img
                     src={service.img}
                     alt={service.title}
-                    className="w-full h-full object-cover opacity-100  group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700"
+                    className="w-full h-full object-cover opacity-100 transition-all duration-700"
                   />
                 )}
               </div>
 
-              <div className="absolute top-6 left-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-emerald-500 text-[10px] font-bold uppercase tracking-widest border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded">Click to View Details</span>
+              {/*FLOATING CONTENT*/}
+              <div className="absolute bottom-0 left-0 p-8 z-30 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span className="inline-block px-3 py-1 mb-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-bold uppercase tracking-widest">
+                  {service.category}
+                </span>
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                  {service.title}
+                </h4>
+                <p className="text-gray-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">
+                  {service.desc}
+                </p>
               </div>
+
+              {/* TOP LEFT HINT */}
+              <div className="absolute top-6 left-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="tex-white border-none text-lg font-lgbold uppercase tracking-widest border  px-2 py-1 rounded bg-green-700">
+                  Click to View Details
+                </span>
+              </div>
+
+              {/* --- MODAL OVERLAY CONTINUES HERE --- */}
 
               {/* --- MODAL OVERLAY --- */}
               {selectedService && (

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { Flashlight } from "@/action/FlashLight";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <main className="p-4 md:p-10 flex-1 w-full">
           {children}
+          <Flashlight />
         </main>
       </body>
     </html>
