@@ -55,17 +55,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-3 space-y-6">
-            <h4 className="text-white font-bold uppercase tracking-widest text-xs">Navigation</h4>
-            <ul className="space-y-4 text-gray-500 text-sm">
-              <li><Link href="#home" className="hover:text-emerald-500 transition-colors">Home</Link></li>
-              <li><Link href="#about" className="hover:text-emerald-500 transition-colors">About</Link></li>
-              <li><Link href="#services" className="hover:text-emerald-500 transition-colors">Services</Link></li>
-              <li><Link href="#skills" className="hover:text-emerald-500 transition-colors">Skills</Link></li>
-              <li><Link href="#contact" className="hover:text-emerald-500 transition-colors">Contact</Link></li>
-            </ul>
-          </div>
+         
 
           {/* Newsletter / CTA */}
           <div className="md:col-span-4 space-y-6">
@@ -112,6 +102,17 @@ export const Footer = () => {
             </p>
           </div>
         </div>
+         {/* Quick Links */}
+          <div className="md:col-span-3 space-y-6">
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs">Navigation</h4>
+            <ul className="space-y-4 text-gray-500 text-sm">
+              <li><Link href="#home" className="hover:text-emerald-500 transition-colors">Home</Link></li>
+              <li><Link href="#about" className="hover:text-emerald-500 transition-colors">About</Link></li>
+              <li><Link href="#services" className="hover:text-emerald-500 transition-colors">Services</Link></li>
+              <li><Link href="#skills" className="hover:text-emerald-500 transition-colors">Skills</Link></li>
+              <li><Link href="#contact" className="hover:text-emerald-500 transition-colors">Contact</Link></li>
+            </ul>
+          </div>
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">

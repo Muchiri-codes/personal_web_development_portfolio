@@ -4,7 +4,7 @@ import React from 'react';
 import { 
   SiReact, SiNextdotjs, SiJavascript, SiTypescript, 
   SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui, 
-  SiNodedotjs, SiWebpack, SiGithub, SiHtml5, SiCss3 
+  SiNodedotjs, SiWebpack, SiGithub, SiHtml5, SiCss 
 } from 'react-icons/si';
 
 export const HERO_CONTENT = {
@@ -90,7 +90,7 @@ export const TECH_STACK = [
   { name: "Webpack", icon: SiWebpack, color: "#8DD6F9" },
   { name: "GitHub", icon: SiGithub, color: "#ffffff" },
   { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+  { name: "CSS3", icon: SiCss, color: "#1572B6" },
 ]
 
 export const CONTACT =[
