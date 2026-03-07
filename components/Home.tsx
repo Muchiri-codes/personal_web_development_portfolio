@@ -1,12 +1,12 @@
 "use client" ///required when using hooks
 import { Github, Linkedin, ArrowRight, Terminal } from 'lucide-react';
 import { HERO_CONTENT } from '../app/data/portfolio';
+import { motion } from 'framer-motion';
 
 const handleClick= () =>{
   document.getElementById("services")?.scrollIntoView({
     behavior:'smooth',
     block:'start'
-
   })
 }
 
@@ -25,8 +25,12 @@ export  const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        
-        {/* Left Side: Text Content (8 columns) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-7 space-y-8"
+        ></motion.div>
         <div className="lg:col-span-7 space-y-8">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold tracking-widest uppercase">
             <Terminal className="w-3 h-3" />
