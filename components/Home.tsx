@@ -49,7 +49,7 @@ export const Hero = () => {
             initial={{opacity:0, rotateY:0}}
             whileInView={{
               opacity:1,
-              rotateY:[0, 360, 720]
+              rotateY:[0, 180, 360]
             }}
             viewport={{once:false, amount:0.3}}
             transition={{
@@ -69,14 +69,26 @@ export const Hero = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-6">
-            <button
+            <motion.button
+            initial={{borderRadius:'12px' }}
+            whileHover={{
+              borderRadius:"50%",
+              scale:1.05,
+              backgroundColor:"#10b981",
+            }}
+            whileTap={{scale:0.95}}
+            transition={{
+              type:"spring",
+              stiffness:200,
+              damping:15
+            }}
               onClick={handleClick}
               className="group relative px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(16,185,129,0.3)]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 View Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </motion.button>
             <div className="flex items-center gap-5 text-gray-500">
               <a href={HERO_CONTENT.socials.github} className="hover:text-emerald-400 transition-colors">
                 <Github className="w-6 h-6" />

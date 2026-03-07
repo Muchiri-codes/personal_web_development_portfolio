@@ -1,11 +1,18 @@
 "use client"
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { SERVICES_LIST } from '@/app/data/portfolio';
 
 export const Services = () => {
   const [selectedService, setSelectedService] = useState<any>(null)
   return (
-    <section id="services" className="py-24 bg-[#0a0a0a]">
+    <motion.section
+    initial={{opacity:0, y:50}}
+    whileInView={{opacity:1, y:0}}
+    viewport={{once:false, amount:0.2}}
+    transition={{duration:0.8, ease:"easeOut"}}
+    
+    id="services" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-8">
 
         <div className="mb-16">
@@ -132,6 +139,6 @@ export const Services = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

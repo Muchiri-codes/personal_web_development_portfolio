@@ -2,14 +2,20 @@
 
 import { useRef } from 'react';
 import { handleFormSubmission } from '@/action/email-submission';
-
+import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
 
 const Contact = () => {
 const formRef = useRef<HTMLFormElement>(null);
   return (
-    <section id="contact" className="relative py-24 bg-[#0a0a0a]">
+    <motion.section
+    initial={{opacity:0, y:50}}
+    whileInView={{opacity:1, y:0}}
+    viewport={{once:false, amount:0.2}}
+    transition={{duration:0.8, ease:"easeOut"}}
+
+    id="contact" className="relative py-24 bg-[#0a0a0a]">
       {/* Decorative Gradient Flare */}
       <div className="absolute bottom-0 right-0 w-100 h-100 bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -135,7 +141,7 @@ const formRef = useRef<HTMLFormElement>(null);
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
