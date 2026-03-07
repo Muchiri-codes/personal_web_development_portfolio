@@ -16,11 +16,11 @@ export const TechStack = () => {
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {TECH_STACK.map((tech, index) => (
             <div 
               key={index}
-              className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/[0.02] transition-all duration-300"
+              className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-white/2 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/2 transition-all duration-300"
             >
               {/* Icon with Dynamic Hover Color */}
               <tech.icon 

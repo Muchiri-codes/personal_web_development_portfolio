@@ -32,7 +32,7 @@ export const About = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="grid grid-cols-2 gap-4 pt-2">
               {ABOUT_CONTENT.stats.map((stat, i) => (
                 <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition">
                   <p className="text-2xl font-bold text-white">{stat.value}</p>

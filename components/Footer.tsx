@@ -70,10 +70,15 @@ export const Footer = () => {
           {/* Newsletter / CTA */}
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Stay Connected</h4>
-            <div className="relative group">
+            <div className="relative flex w-full justify-between group">
+              <div className='flex-1'>
+              <h2 className='font-bold text-md'>Be sure to join our developers team, 
+                this is not to be used for any spams or any other kind of advert but just networking and creating a lasting link with a developer mindful of your business.
+              </h2>
+              </div>
               <form
                 onSubmit={onSubmit}
-                className="p-5 md:p-7 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-5 max-w-md mx-auto"
+                className="p-5 md:p-7 flex-1 ml-2 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-5 max-w-md mx-auto"
               >
                 <input
                   type="name"

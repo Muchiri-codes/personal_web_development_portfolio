@@ -25,7 +25,7 @@ export const Flashlight= () => {
     >
         <button 
             onClick={() => setIsActive(false)} 
-            className="pointer-events-auto absolute top-4 right-4 text-white"
+            className="pointer-events-auto absolute top-4 right-4 bg-green-700 text-white rounded-full p-2"
         >Exit Flashlight</button>
     </div>
   );

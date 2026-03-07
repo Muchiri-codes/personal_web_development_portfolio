@@ -14,7 +14,7 @@ export const Services = () => {
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES_LIST.map((service: any, index) => (
             <div
               key={index}
@@ -52,14 +52,6 @@ export const Services = () => {
                 </p>
               </div>
 
-              {/* TOP LEFT HINT */}
-              <div className="absolute top-6 left-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="tex-white border-none text-lg font-lgbold uppercase tracking-widest border  px-2 py-1 rounded bg-green-700">
-                  Click to View Details
-                </span>
-              </div>
-
-              {/* --- MODAL OVERLAY CONTINUES HERE --- */}
 
               {/* --- MODAL OVERLAY --- */}
               {selectedService && (
