@@ -2,6 +2,7 @@
 
 import { ABOUT_CONTENT, HERO_CONTENT } from '../app/data/portfolio';
 import { User, Briefcase, Award } from 'lucide-react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export const About = () => {
@@ -30,19 +31,33 @@ export const About = () => {
                 />
               </div>
               {/* Floating Stat Card */}
-              <div className="absolute -bottom-6 -right-6 p-6 bg-emerald-500 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-black font-black text-3xl line-height-none">5+</p>
+              <div className="absolute -bottom-6 -right-6 p-3 bg-emerald-500 rounded-2xl shadow-xl hidden md:block">
+                <p className="text-black font-black text-2xl line-height-none">5+</p>
                 <p className="text-black/80 text-xs font-bold uppercase tracking-tighter">Years of Mastery</p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
               {ABOUT_CONTENT.stats.map((stat, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition">
+                <div key={i} className="sm:p-3 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition">
                   <p className="text-2xl font-bold text-white">{stat.value}</p>
                   <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">{stat.label}</p>
                 </div>
               ))}
+            </div>
+            <div>
+              <h1 className='text-xl '>
+                My name is <span className='font-bold text-emerald-400'>John Muchiri</span>,  A full stack website developer based in Kenya. <br />My aim is to create self selling website for my clients. <br />Such a website that keeps  your business at the top. <br />My aim for skill and less of certificates is evident in my vast range of toolset I use. <br />Your desired website is a guarantee.
+                To check my toolset, <Link
+                className='text-emerald-600'
+                href={'#TechStack'}>click me </Link>
+              </h1>
+              <h2 className='text-lg pt-3'>
+                To download my CV, hit the button below:
+                <button className='bg-emerald-800 m-2 text-white p-4 rounded-lg font-bold'>
+                  DOWNLOAD CV
+                </button>
+              </h2>
             </div>
           </div>
 
