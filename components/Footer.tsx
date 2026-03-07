@@ -62,8 +62,7 @@ export const Footer = () => {
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Stay Connected</h4>
             <div className="relative flex w-full justify-between group">
               <div className='flex-1'>
-              <h2 className='font-bold text-md'>Be sure to join our developers team, 
-                this is not to be used for any spams or any other kind of advert but just networking and creating a lasting link with a developer mindful of your business.
+              <h2 className='font-bold text-md'>Be sure to join our developers team. send us your name and email address.
               </h2>
               </div>
               <form

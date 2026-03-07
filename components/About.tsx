@@ -1,6 +1,6 @@
 "use client"
 
-import { ABOUT_CONTENT } from '../app/data/portfolio';
+import { ABOUT_CONTENT, HERO_CONTENT } from '../app/data/portfolio';
 import { User, Briefcase, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -23,12 +23,9 @@ export const About = () => {
             <div className="relative group">
               <div className="aspect-square rounded-3xl overflow-hidden bg-[#111] border border-white/5">
                 {/* Image Placeholder */}
-                <video 
-                  src="/creative_process.mp4" 
-                  muted
-                  autoPlay 
-                  loop
-                  playsInline
+                <img
+                  src={HERO_CONTENT.imagePath}
+                  alt="profile_image"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 opacity-80 group-hover:opacity-100"
                 />
               </div>
