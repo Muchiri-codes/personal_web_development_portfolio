@@ -39,7 +39,7 @@ export const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden p-5 md:pt-10"
     >
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full" />
@@ -66,7 +66,7 @@ export const Hero = () => {
               className="text-5xl inline-block md:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9]"
             >
               {HERO_CONTENT.title} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-600">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-green-600">
                 {HERO_CONTENT.titleGradient}
               </span>
             </motion.h1>

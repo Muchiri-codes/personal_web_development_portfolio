@@ -22,8 +22,8 @@ export const About = () => {
           {/* Left Column: Stats & Image Holder */}
           <div className="lg:col-span-5 space-y-8">
             <div className="relative group">
-              <div className="aspect-square rounded-3xl overflow-hidden bg-[#111] border border-white/5">
-                {/* Image Placeholder */}
+              <div className="aspect-portrait rounded-3xl overflow-hidden bg-[#111] border border-white/5">
+              
                 <img
                   src={HERO_CONTENT.imagePath}
                   alt="profile_image"
@@ -96,7 +96,7 @@ export const About = () => {
                 {ABOUT_CONTENT.experience.map((exp, i) => (
                   <div 
                     key={i} 
-                    className="flex flex-col md:flex-row md:items-center justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] transition group"
+                    className="flex flex-col md:flex-row md:items-center justify-between p-6 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/5 transition group"
                   >
                     <div>
                       <h4 className="text-white font-bold text-lg group-hover:text-emerald-400 transition">
