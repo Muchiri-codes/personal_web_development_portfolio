@@ -15,19 +15,27 @@ const handleClick = () => {
 
 export const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
-  
+  const [isMobile, setIsMobile] = useState(false)
+
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(videoRef, { amount: 0.3 });
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+
+    window.addEventListener('resize', checkMobile);
     const timer = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
     }, 3000);
-    return () => clearInterval(timer);
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
-  // Play/Pause video based on scroll position
   useEffect(() => {
     if (isInView) {
       videoRef.current?.play();
@@ -37,18 +45,18 @@ export const Hero = () => {
   }, [isInView]);
 
   return (
-    <section 
-      id="home" 
-      className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden p-5 md:pt-10"
+    <section
+      id="home"
+      className="relative h-auto  py-20 md:py-32 flex items-center bg-[#0a0a0a] overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-green-900/10 blur-[100px] rounded-full" />
       </div>
 
-      {/* Grid Update: Changed to 6/6 split for larger video on laptop */}
+
       <div className="max-w-7xl mx-auto px-8 w-full flex flex-col lg:grid lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         {/* Left Side: Text (Occupies 6 columns) */}
         <div className="lg:col-span-6 space-y-8 order-2 lg:order-1">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold tracking-widest uppercase">
@@ -58,11 +66,16 @@ export const Hero = () => {
 
           <div className="space-y-4">
             <motion.h1
-              initial={{opacity:0, rotateY:0}}
-              whileInView={{ opacity:1, rotateY:[0, 180, 360] }}
-              viewport={{once:false, amount:0.3}}
-              transition={{ duration:2, ease:"easeInOut" }}
-              style={{originX:0.5, perspective:1000}}
+              initial={{ opacity: 0, rotateY: 0 }}
+
+              whileInView={
+                isMobile
+                  ? { opacity: 1, rotateY: [0, 180, 360] }
+                  : { opacity: 1 }
+              }
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+              style={{ originX: 0.5, perspective: 1000 }}
               className="text-5xl inline-block md:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9]"
             >
               {HERO_CONTENT.title} <br />
@@ -77,10 +90,10 @@ export const Hero = () => {
 
           <div className="flex flex-wrap items-center gap-6">
             <motion.button
-              initial={{borderRadius:'12px' }}
-              whileHover={{ borderRadius:"100px", scale:1.05, backgroundColor:"#10b981" }}
-              whileTap={{scale:0.95}}
-              transition={{ type:"spring", stiffness:200, damping:15 }}
+              initial={{ borderRadius: '12px' }}
+              whileHover={{ borderRadius: "100px", scale: 1.05, backgroundColor: "#10b981" }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
               onClick={handleClick}
               className="group relative px-8 py-4 bg-emerald-500 text-black font-bold overflow-hidden shadow-[0_10px_30px_rgba(16,185,129,0.3)]"
             >
@@ -101,16 +114,16 @@ export const Hero = () => {
 
         {/* Right Side: Video (Occupies 6 columns - 50% width) */}
         <div className="w-full lg:col-span-6 relative order-1 lg:order-2">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative z-10 aspect-video lg:aspect-square xl:aspect-4/5 rounded-3xl p-1 bg-linear-to-b from-emerald-500/50 to-transparent shadow-2xl overflow-hidden"
+            className="relative z-10 sm:w-full sm:h-112.5 aspect-video lg:aspect-3/4 xl:aspect-4/5 rounded-3xl p-1 bg-linear-to-b from-emerald-500/50 to-transparent shadow-2xl overflow-hidden"
           >
             <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-[#111] relative group">
-              <video 
+              <video
                 ref={videoRef}
-                src="/creative_process.mp4" 
+                src="/creative_process.mp4"
                 playsInline
                 muted
                 loop

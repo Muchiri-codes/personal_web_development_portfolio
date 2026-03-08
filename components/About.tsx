@@ -1,7 +1,9 @@
 "use client"
 
 import { ABOUT_CONTENT, HERO_CONTENT } from '../app/data/portfolio';
+import { handleDownload } from './CVDownload';
 import { User, Briefcase, Award } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -12,7 +14,7 @@ export const About = () => {
     whileInView={{opacity:1, y:0}}
     viewport={{once:false, amount:0.2}}
     transition={{duration:0.8, ease:"easeOut"}}
-    id="about" className="relative py-24 bg-[#0a0a0a] overflow-hidden">
+    id="about" className="relative bg-[#0a0a0a] overflow-hidden">
       {/* Subtle background glow to separate sections */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-125 h-125 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -54,9 +56,16 @@ export const About = () => {
               </h1>
               <h2 className='text-lg pt-3'>
                 To download my CV, hit the button below:
-                <button className='bg-emerald-800 m-2 text-white p-4 rounded-lg font-bold'>
+                <motion.button 
+                onClick={handleDownload}
+                initial={{borderRadius:'12px'}}
+                whileHover={{scale:1.05, backgroundColor:"#10b981"}}
+                whileTap={{scale:0.95}}
+
+                className='bg-emerald-800 m-2 text-white p-4 rounded-lg font-bold'>
                   DOWNLOAD CV
-                </button>
+                  <ArrowRight className="w-4 h-4 group-hover:rotate-90 transition-transform" />
+                </motion.button>
               </h2>
             </div>
           </div>
