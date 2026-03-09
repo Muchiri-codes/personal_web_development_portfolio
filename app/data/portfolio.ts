@@ -40,7 +40,7 @@ export const ABOUT_CONTENT = {
 export const SERVICES = [
   {
     title: "Web Development",
-    description: "Building scalable, high-performance applications with React and Next.js.",
+    description: "I build scalable, high-performance applications with React and Next.js frameworks. ",
     icon: 'Code', // We pass the string and map it in the component
     tags: ["TypeScript", "Next.js", "Node.js"]
   },
@@ -58,23 +58,22 @@ export const SERVICES = [
   }
 ];
 export const SERVICES_LIST = [
-  // Web Development
-  { title: "Fullstack Apps", desc: "Building robust Next.js applications with scalable backends.", category: "Development", img: "/fullstack.png" },
-  { title: "API Integration", desc: "Connecting seamless data flows between 3rd party services.", category: "Development", img: "/api.jpg" },
-  { title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence.", category: "Development", img: "/optimization.png" },
+ 
+  { title: "Fullstack Apps", desc: "Building robust Next.js applications with scalable backends. My apps are built for effective user journy and an easy to debug code that is scalable incase there is need to upgrade your website coverage.", category: "Development", img: "/fullstack.png" },
+  { title: "API Integration", desc: "Connecting seamless data flows between 3rd party services. Your website is not complete until there flawless transfter of data from various ends, that is how clients are able to access the data they need from your website and guess what?! That is where an experienced website develper like me is needed.", category: "Development", img: "/api.jpg" },
+  { title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence. Client journey in your website is a great concern, ever loading websites likely from overloaded packages will definitely discourage the client, Fast navigation is paramount when I am designing my websites. ", category: "Development", img: "/optimization.png" },
   
-  // Web Design
-  { title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow.", category: "Design", img: "/uiux.mp4" },
+
+  { title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow. The visual appearance has the ability to attract and keep the client longer as they view what the website has to offer, that is where I come in.", category: "Design", img: "/uiux.mp4" },
   { title: "Design Systems", desc: "Modular component libraries for brand consistency.", category: "Design", img: "/system_design.mp4" },
   { title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", category: "Design", img: "/responsive_layout.mp4" },
 
-  // Graphics Design
-  { title: "Visual Branding", desc: "Defining your identity through color, type, and logos.", category: "Graphics", img: "/visual_branding.jpeg" },
-  { title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations.", category: "Graphics", img: "/motion_graphics.mp4" },
-  { title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals.", category: "Graphics", img: "/digital_assets.jpeg" },
+ 
+  { title: "Visual Branding", desc: "Defining your identity through color, type, and logos. Your logos and choice of colors are as important as the website itself as they are able to define the brand, I balance color and graphics of your website to bring out the visual effect needed. ", category: "Graphics", img: "/visual_branding.jpeg" },
+  { title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations. Away from the boring static apps, active graphics are not only eye appealing but also an enhancement of the marketability of your business.", category: "Graphics", img: "/motion_graphics.mp4" },
+  { title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals. In this century, wealth is not just held as tangibles, but rather digital assets such as crypto or other virtually owned minerals; With such property, a system for tracking your wealth is handy and that is where I come in.", category: "Graphics", img: "/digital_assets.jpeg" },
 
-  //web mapping
-  { title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats.", category: "Mapping", img: "/web_mapping.jpeg" },
+  { title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats. By proffesion, I am a geomatics engineering and geospatial information systems from the Dedan Kimathi university of technology, therefore spatial data analysis such as web mapping is an area of specialization for me.", category: "Mapping", img: "/web_mapping.jpeg" },
 
 ];
 export const TECH_STACK = [
