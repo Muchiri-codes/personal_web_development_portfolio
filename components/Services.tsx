@@ -2,17 +2,18 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES_LIST } from '@/app/data/portfolio';
+import { ArrowUp } from 'lucide-react';
 
 export const Services = () => {
   const [selectedService, setSelectedService] = useState<any>(null)
   return (
     <motion.section
-    initial={{opacity:0, y:50}}
-    whileInView={{opacity:1, y:0}}
-    viewport={{once:false, amount:0.2}}
-    transition={{duration:0.8, ease:"easeOut"}}
-    
-    id="services" className="py-24 bg-[#0a0a0a]">
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+
+      id="services" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-8">
 
         <div className="mb-16">
@@ -84,14 +85,26 @@ export const Services = () => {
                       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#10b981 0.5px, transparent 0.5px)', backgroundSize: '20px 20px' }} />
 
                       <div className="relative w-full h-full">
-                        {/* Image 1: Tilted Left */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-3/4 -translate-y-1/2 w-48 md:w-64 aspect-4/5 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl transform -rotate-12 transition-transform hover:-rotate-6 duration-500 z-10">
-                          <img src={selectedService.img} alt="Project detail 1" className="w-full h-full object-cover" />
+
+                        {/* Image/Video 1: Tilted Left */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-3/4 -translate-y-1/2 w-48 md:w-64 aspect-4/5 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl transform -rotate-12 transition-transform hover:-rotate-6 duration-500 z-10 bg-[#111]">
+                          {/\.(mp4|webm|ogg)$/i.test(selectedService.img) ? (
+                            <video src={selectedService.img} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                          ) : (
+                            <img src={selectedService.img} alt="Detail 1" className="w-full h-full object-cover" />
+                          )}
                         </div>
-                        {/*second image titled right*/}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-48 md:w-64 aspect-4/5 rounded-2xl overflow-hidden border-2 border-emerald-500/30 shadow-2xl transform rotate-6 transition-transform hover:rotate-3 duration-500 z-20">
-                          <img src={selectedService.img2 || selectedService.img} alt="Project detail 2" className="w-full h-full object-cover" />
+
+                        {/* Image/Video 2: Tilted Right */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 w-48 md:w-64 aspect-4/5 rounded-2xl overflow-hidden border-2 border-emerald-500/30 shadow-2xl transform rotate-6 transition-transform hover:rotate-3 duration-500 z-20 bg-[#111]">
+                        
+                          {/\.(mp4|webm|ogg)$/i.test(selectedService.img2 || selectedService.img) ? (
+                            <video src={selectedService.img2 || selectedService.img} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                          ) : (
+                            <img src={selectedService.img2 || selectedService.img} alt="Detail 2" className="w-full h-full object-cover" />
+                          )}
                         </div>
+
                       </div>
                     </div>
 
@@ -114,21 +127,22 @@ export const Services = () => {
                         <div className="grid grid-cols-2 gap-4 py-8">
                           <div className="border-l border-emerald-500/30 pl-4">
                             <h4 className="text-white font-bold text-sm uppercase">Focus Area</h4>
-                            <p className="text-gray-500 text-xs mt-1">{selectedService.focus || 'Geospatial ML'}</p>
+                            <p className="text-gray-500 text-md mt-1">{selectedService.focus_area }</p>
                           </div>
                           <div className="border-l border-emerald-500/30 pl-4">
                             <h4 className="text-white font-bold text-sm uppercase">Deliverable</h4>
-                            <p className="text-gray-500 text-xs mt-1">Classification Map</p>
+                            <p className="text-gray-500 text-md mt-1">{selectedService.deliverable}</p>
                           </div>
                         </div>
 
                         <button className="w-full md:w-auto px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl hover:bg-emerald-400 transition-all uppercase text-xs tracking-widest">
-                          View Live Case Study
+                          Click me if you want such service as this.
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
+
               )}
 
 
