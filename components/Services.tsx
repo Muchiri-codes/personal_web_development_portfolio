@@ -135,7 +135,9 @@ export const Services = () => {
                           </div>
                         </div>
 
-                        <button className="w-full md:w-auto px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl hover:bg-emerald-400 transition-all uppercase text-xs tracking-widest">
+                        <button
+                        
+                        className="w-full md:w-auto px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl hover:bg-emerald-400 transition-all uppercase text-xs tracking-widest">
                           Click me if you want such service as this.
                         </button>
                       </div>
