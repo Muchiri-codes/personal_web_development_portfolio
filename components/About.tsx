@@ -52,7 +52,7 @@ export const About = () => {
                 My name is <span className='font-bold text-emerald-400'>John Muchiri</span>,  A full stack website developer based in Kenya. <br />My aim is to create self selling website for my clients. <br />Such a website that keeps  your business at the top. <br />My aim for skill and less of certificates is evident in my vast range of toolset I use. <br />Your desired website is a guarantee.
                 To check my toolset, <Link
                 className='text-emerald-600'
-                href={'#skills'}>click me </Link>
+                href={'#techstack'}>click me </Link>
               </h1>
               <h2 className='text-lg pt-3'>
                 To download my CV, hit the button below:
