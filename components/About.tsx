@@ -28,6 +28,7 @@ export const About = () => {
                 <img
                   src={HERO_CONTENT.imagePath}
                   alt="profile_image"
+                  loading="lazy"
                   className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition duration-700 opacity-80 group-hover:opacity-100"
                 />
               </div>

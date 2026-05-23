@@ -29,6 +29,7 @@ export default function Navbar() {
               alt="logo"
               width={50}
               height={50}
+              loading='lazy'
             />
           </Link>
           <span className="ml-4 font-black text-white tracking-tighter hidden xs:block">

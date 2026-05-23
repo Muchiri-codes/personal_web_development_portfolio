@@ -36,6 +36,7 @@ export const Footer = () => {
                 alt="Logo"
                 width={45}
                 height={45}
+                loading='lazy'
                 className="rounded-full border border-emerald-500/20 group-hover:border-emerald-500/50 transition-colors"
               />
               <span className="font-black text-white tracking-tighter text-xl">

@@ -40,6 +40,7 @@ export const Services = () => {
                   <img
                     src={service.img}
                     alt={service.title}
+                    loading='lazy'
                     className="w-full h-full object-cover opacity-100 transition-all duration-700"
                   />
                 )}
