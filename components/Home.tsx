@@ -44,116 +44,117 @@ export const Hero = () => {
     }
   }, [isInView]);
 
-  return (
-    <section
-      id="home"
-      className="relative h-auto  py-20 md:py-32 flex items-center bg-[#0a0a0a] overflow-hidden"
-    >
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-green-900/10 blur-[100px] rounded-full" />
-      </div>
+return (
+  <section
+    id="home"
+    className="relative h-auto py-22 md:py-32 flex items-center bg-[#0a0a0a] overflow-hidden"
+  >
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-green-900/10 blur-[100px] rounded-full" />
+    </div>
 
+ 
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
 
-      <div className="max-w-7xl mx-auto px-8 w-full flex flex-col lg:grid lg:grid-cols-12 gap-12 items-center relative z-10">
-
-        {/* Left Side: Text (Occupies 6 columns) */}
-        <div className="lg:col-span-6 space-y-8 order-2 lg:order-1">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold tracking-widest uppercase">
-            <Terminal className="w-3 h-3" />
-            <span>{HERO_CONTENT.badge}</span>
-          </div>
-
-          <div className="space-y-4">
-            <motion.h1
-              initial={{ opacity: 0, rotateY: 0 }}
-
-              whileInView={
-                isMobile
-                  ? { opacity: 1, rotateY: [0, 180, 360] }
-                  : { opacity: 1 }
-              }
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-              style={{ originX: 0.5, perspective: 1000 }}
-              className="text-5xl inline-block md:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9]"
-            >
-              {HERO_CONTENT.title} <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-green-600">
-                {HERO_CONTENT.titleGradient}
-              </span>
-            </motion.h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
-              {HERO_CONTENT.description}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-6">
-            <motion.button
-              initial={{ borderRadius: '12px' }}
-              whileHover={{ borderRadius: "100px", scale: 1.05, backgroundColor: "#10b981" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              onClick={handleClick}
-              className="group relative px-8 py-4 bg-emerald-500 text-black font-bold overflow-hidden shadow-[0_10px_30px_rgba(16,185,129,0.3)]"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                View Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </motion.button>
-            <div className="flex items-center gap-5 text-gray-500">
-              <a href={HERO_CONTENT.socials.github} className="hover:text-emerald-400 transition-colors">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href={HERO_CONTENT.socials.linkedin} className="hover:text-emerald-400 transition-colors">
-                <Linkedin className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
+      {/* Left Side: Text (Occupies 6 columns) */}
+      <div className="lg:col-span-6 space-y-8 order-2 lg:order-1 w-full">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold tracking-widest uppercase">
+          <Terminal className="w-3 h-3" />
+          <span>{HERO_CONTENT.badge}</span>
         </div>
 
-        {/* Right Side */}
-        <div className="w-full lg:col-span-6 relative order-1 lg:order-2">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative z-10 sm:w-full sm:h-112.5 aspect-video lg:aspect-3/4 xl:aspect-4/5 rounded-3xl p-1 bg-linear-to-b from-emerald-500/50 to-transparent shadow-2xl overflow-hidden"
+        <div className="space-y-4">
+          <motion.h1
+            initial={{ opacity: 0, rotateY: 0 }}
+            whileInView={
+              isMobile
+                ? { opacity: 1, rotateY: [0, 180, 360] }
+                : { opacity: 1 }
+            }
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            style={{ originX: 0.5, perspective: 1000 }}
+            className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9]"
           >
-            <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-[#111] relative group">
-              <video
-                ref={videoRef}
-                src="/creative_process.mp4"
-                playsInline
-                muted
-                loop
-                className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100"
-              />
+            {HERO_CONTENT.title} <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-green-600">
+              {HERO_CONTENT.titleGradient}
+            </span>
+          </motion.h1>
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed">
+            {HERO_CONTENT.description}
+          </p>
+        </div>
 
-              {/* FLOATING TEXT */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 bg-linear-to-t from-black/90 via-black/20 to-transparent pointer-events-none">
-                <p className="text-white/80 text-lg font-bold mb-1 italic">Hello, I'm John and I do:</p>
-                <div className="h-12">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={roles[roleIndex]}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.4 }}
-                      className="text-emerald-400 font-black text-2xl md:text-4xl uppercase tracking-tighter block"
-                    >
-                      {roles[roleIndex]}
-                    </motion.span>
-                  </AnimatePresence>
-                </div>
+        <div className="flex flex-wrap items-center gap-6">
+          <motion.button
+            initial={{ borderRadius: '12px' }}
+            whileHover={{ borderRadius: "100px", scale: 1.05, backgroundColor: "#10b981" }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            onClick={handleClick}
+            className="group relative w-full sm:w-auto text-center justify-center px-8 py-4 bg-emerald-500 text-black font-bold overflow-hidden shadow-[0_10px_30px_rgba(16,185,129,0.3)]"
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              View Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </motion.button>
+          <div className="flex items-center gap-5 text-gray-500 mx-auto sm:mx-0">
+            <a href={HERO_CONTENT.socials.github} className="hover:text-emerald-400 transition-colors">
+              <Github className="w-6 h-6" />
+            </a>
+            <a href={HERO_CONTENT.socials.linkedin} className="hover:text-emerald-400 transition-colors">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Side - THE VIDEO CONTAINER FIXED */}
+      <div className="w-full lg:col-span-6 relative order-1 lg:order-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+  
+          className="relative z-10 w-full aspect-4/5 sm:aspect-video lg:aspect3/4 xl:aspect-4/5 sm:h-auto rounded-3xl p-0.5 sm:p-1 bg-linear-to-b from-emerald-500/40 to-transparent shadow-2xl overflow-hidden"
+        >
+          <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-[#111] relative group">
+            <video
+              ref={videoRef}
+              src="/creative_process.mp4"
+              playsInline
+              muted
+              loop
+              className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100"
+            />
+
+            {/* FLOATING TEXT */}
+            <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6 md:p-10 bg-linear-to-t from-black/95 via-black/30 to-transparent pointer-events-none">
+              <p className="text-white/80 text-base sm:text-lg font-bold mb-1 italic">Hello, I'm John and I do:</p>
+              <div className="h-10 sm:h-12">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={roles[roleIndex]}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4 }}
+                    className="text-emerald-400 font-black text-xl sm:text-2xl md:text-4xl uppercase tracking-tighter block"
+                  >
+                    {roles[roleIndex]}
+                  </motion.span>
+                </AnimatePresence>
               </div>
             </div>
-          </motion.div>
-          <div className="absolute -inset-4 bg-emerald-500/20 blur-3xl z-0 rounded-full" />
-        </div>
-
+          </div>
+        </motion.div>
+        {/* Subtle backing glow accent behind the video frame */}
+        <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl z-0 rounded-full pointer-events-none" />
       </div>
-    </section>
-  );
+
+    </div>
+  </section>
+);
 };
