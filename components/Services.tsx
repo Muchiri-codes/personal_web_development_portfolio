@@ -7,11 +7,11 @@ import { SERVICES_LIST } from '@/app/data/portfolio';
 export const Services = () => {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 30 }} 
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      id="services" 
+      id="services"
       className="py-24 bg-[#0a0a0a]"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -24,26 +24,27 @@ export const Services = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {SERVICES_LIST.map((service: any, index) => {
             const isVideo = /\.(mp4|webm|ogg)$/i.test(service.img);
-            
+
             return (
               <Link
                 key={index}
                 href={`/services/${service.slug || index}`}
                 prefetch={false}
-                className="group relative block aspect-[4/5] rounded-xl overflow-hidden border border-white/5 bg-[#111] transform-gpu will-change-transform tap-highlight-transparent"
+                className="group relative block aspect-4/5 rounded-xl overflow-hidden border border-white/5 bg-[#111] transform-gpu will-change-transform tap-highlight-transparent"
               >
                 {/* IMAGE/VIDEO BACKGROUND CONTAINER */}
                 <div className="absolute inset-0 w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
-                  <div className="w-full h-full bg-gradient-to-b from-transparent via-black/30 to-black/95 absolute z-10 pointer-events-none" />
-                  
+                  {/* FIXED OVERLAY GRADIENT: Centered mask on mobile, traditional bottom fade on md+ layouts */}
+                  <div className="absolute inset-0 bg-black/45 md:bg-gradient-to-b md:from-transparent md:via-black/30 md:to-black/95 z-10 pointer-events-none" />
+
                   {isVideo ? (
                     <video
                       src={service.img}
-                      autoPlay 
-                      muted 
-                      loop 
+                      autoPlay
+                      muted
+                      loop
                       playsInline
-                      preload="none" 
+                      preload="none"
                       className="w-full h-full object-cover opacity-80"
                     />
                   ) : (
@@ -59,17 +60,17 @@ export const Services = () => {
                 </div>
 
                 {/* FLOATING CONTENT */}
-                {/* CRITICAL FIX 4: Removed extreme translate-y shifting on mobile viewports for instant touch responsiveness */}
-                <div className="absolute inset-x-0 bottom-0 p-5 md:p-8 z-30 w-full transition-transform duration-300">
-                  <span className="inline-block px-2.5 py-0.5 mb-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 md:inset-auto md:bottom-0 md:p-8 z-30 w-full transition-transform duration-300">
+                  {/* Increased badge size on mobile from text-[10px] to text-xs */}
+                  <span className="inline-block px-3 py-1 mb-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
                     {service.category}
                   </span>
                   
-                  <h4 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                  <h4 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors px-2">
                     {service.title}
                   </h4>
-                  
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+
+                  <p className="text-gray-300 md:text-gray-400 text-sm leading-relaxed max-w-[85%] line-clamp-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     {service.desc}
                   </p>
                 </div>
