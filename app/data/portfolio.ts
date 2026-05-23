@@ -1,11 +1,15 @@
 
 import { Code, Paintbrush, Layout, Video } from 'lucide-react';
 import React from 'react';
-import { 
-  SiReact, SiNextdotjs, SiJavascript, SiTypescript, 
-  SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui, 
-  SiNodedotjs, SiWebpack, SiGithub, SiHtml5, SiCss 
+import {
+  SiReact, SiNextdotjs, SiJavascript, SiTypescript,
+  SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui,
+  SiNodedotjs, SiWebpack, SiGithub, SiHtml5, SiCss,
+   SiGooglesheets, SiFramer,
+  SiMapbox, SiFigma, SiSupabase, SiAutodesk,
+  SiWhatsapp
 } from 'react-icons/si';
+import { FiMap, FiCpu, FiLayers } from 'react-icons/fi';
 
 export const HERO_CONTENT = {
   badge: "Available for freelance & full-time",
@@ -15,7 +19,8 @@ export const HERO_CONTENT = {
   imagePath: "/profile.jpeg",
   socials: {
     github: "https://github.com/Muchiri-codes",
-    linkedin: "https://linkedin.com/in/John_Muchiri"
+    linkedin: "https://linkedin.com/in/John_Muchiri",
+    whatsapp:"https://wa.me/254111884025"
   }
 };
 
@@ -41,7 +46,7 @@ export const SERVICES = [
   {
     title: "Web Development",
     description: "I build scalable, high-performance applications with React and Next.js frameworks. ",
-    icon: 'Code', //pass the string and map it in the component
+    icon: 'Code',
     tags: ["TypeScript", "Next.js", "Node.js"]
   },
   {
@@ -58,22 +63,117 @@ export const SERVICES = [
   }
 ];
 export const SERVICES_LIST = [
- 
-  { title: "Fullstack Apps", desc: "Building robust Next.js applications with scalable backends. My apps are built for effective user journy and an easy to debug code that is scalable incase there is need to upgrade your website coverage.",focus_area:"scale, ease of debugging, databases, self-contained.", deliverable:"customer friendly apps", category: "Development", img: "/fullstack.png", img2:"/fullstack_2.jpg" },
-  { title: "API Integration", desc: "Connecting seamless data flows between 3rd party services. Your website is not complete until there flawless transfter of data from various ends, that is how clients are able to access the data they need from your website and guess what?! That is where an experienced website develper like me is needed.",focus_area:"cost, size of data, integration", deliverable:"fast, cost effective options", category: "Development", img: "/api.jpg", img2:"/api_2.jpg" },
-  { title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence. Client journey in your website is a great concern, ever loading websites likely from overloaded packages will definitely discourage the client, Fast navigation is paramount when I am designing my websites. ",focus_area:"speed, customer journey", deliverable:"ultra fast apps with quick navigations", category: "Development", img: "/optimization.png", img2:"/optimization_2.jpg" },
-  
 
-  { title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow. The visual appearance has the ability to attract and keep the client longer as they view what the website has to offer, that is where I come in.",focus_area:"visual appearance, color choice, fonts, images, videos etc.", deliverable:"visually appealing designs that hold your client for long in  your website.", category: "Design", img: "/uiux.mp4", img2:"/ui-ux_2.jpg"},
-  { title: "Design Systems", desc: "Modular component libraries for brand consistency.",focus_area:"content placement, ease of use by clients, accessibility", deliverable:"proffesional designs that are not only appealing but also easy to use.", category: "Design", img: "/system_design.mp4" },
-  { title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", focus_area:"scales, fonts, screen sizes.", deliverable:"Apps that suit all types of screen sizes such as laptops, monitors, mobile phones, tablets etc. ",category: "Design", img: "/responsive_layout.mp4", img2:"/responsive_layout_2.jpg" },
+  {
+    slug: "fullstack",
+    title: "Fullstack Apps",
+    desc: "Building robust Next.js applications with scalable backends. My apps are built for effective user journy and an easy to debug code that is scalable incase there is need to upgrade your website coverage.", focus_area: "scale, ease of debugging, databases, self-contained.", deliverable: "customer friendly apps",
+    category: "Development",
+    img: "/fullstack.png",
+    img2: "/fullstack_2.jpg",
+    gallery: [
+      '/fullstack.png',
+    ]
+  },
+  {
+    slug: "graphics-design",
+    title: "Graphics Design",
+    desc: "Crafting beautiful, impactful visual assets for your brand. Design work can be done remotely or on site. ",
+    focus_area: "Branding, Typography, Layout",
+    deliverable: "High-res source files & assets",
+    category: "Design",
+    img: "/graphics/bnb.png",
+    gallery: [
+      "/graphics/fast_foods.jpg",
+      "/graphics/charity.jpg",
+      "/graphics/company.jpg",
+      "/graphics/orange.jpg",
+      "/graphics/salon.png",
+      "/graphics/surveyor.jpg",
+      "/graphics/hotel.jpg",
+    ]
+  },
 
- 
-  { title: "Visual Branding", desc: "Defining your identity through color, type, and logos. Your logos and choice of colors are as important as the website itself as they are able to define the brand, I balance color and graphics of your website to bring out the visual effect needed. ",focus_area:"visual appearance, scale, fonts, typography, images", deliverable:"high quality brands that are self selling.", category: "Graphics", img: "/visual_branding.jpeg", img2:"/visual_branding_2.jpg" },
-  { title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations. Away from the boring static apps, active graphics are not only eye appealing but also an enhancement of the marketability of your business.",focus_area:"scale, animation and screen sizes.", deliverable:"visually appealing animated graphics that altogether hold the client in yoour website long enough to see what your business has to offer", category: "Graphics", img: "/motion_graphics.mp4", },
-  { title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals. In this century, wealth is not just held as tangibles, but rather digital assets such as crypto or other virtually owned minerals; With such property, a system for tracking your wealth is handy and that is where I come in.", focus_area:"inclusive dashboards, security, privacy, fast, scalability and feasibility", deliverable:"Highly secure systems that quickly respons to any changes in your digital assets such as crypro-currency",category: "Graphics", img: "/digital_assets.jpeg", img2:'/digital_assets_2.jpg' },
+  {
+    slug: "api",
+    title: "API Integration",
+    desc: "Connecting seamless data flows between 3rd party services. Your website is not complete until there flawless transfter of data from various ends, that is how clients are able to access the data they need from your website and guess what?! That is where an experienced website develper like me is needed.",
+    focus_area: "cost, size of data, integration",
+    deliverable: "fast, cost effective options",
+    category: "Development", img: "/api.jpg", img2: "/api_2.jpg",
+    gallery: [
+      '/api.jpg',
+      '/api_2.jpg'
+    ],
+  },
+  {
+    slug: "performance",
+    title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence. Client journey in your website is a great concern, ever loading websites likely from overloaded packages will definitely discourage the client, Fast navigation is paramount when I am designing my websites. ", focus_area: "speed, customer journey", deliverable: "ultra fast apps with quick navigations", category: "Development", img: "/optimization.png", img2: "/optimization_2.jpg",
+    gallery: [
+      '/optimization.png',
+      '/optimization_2.jpg'
+    ]
+  },
 
-  { title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats. By proffesion, I am a geomatics engineering and geospatial information systems from the Dedan Kimathi university of technology, therefore spatial data analysis such as web mapping is an area of specialization for me.",focus_area:"cartography, databases, speed", deliverable:"interactive web maos that are able to communicate any message that has location stamps in it.", category: "Mapping", img: "/web_mapping.jpeg", img2:'/web_mapping_2.jpg' },
+
+  {
+    slug: "ui_ux",
+    title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow. The visual appearance has the ability to attract and keep the client longer as they view what the website has to offer, that is where I come in.", focus_area: "visual appearance, color choice, fonts, images, videos etc.", deliverable: "visually appealing designs that hold your client for long in  your website.", category: "Design", img: "/uiux.mp4", img2: "/ui-ux_2.jpg",
+    gallery: [
+      '/uiux.mp4',
+      '/ui-ux_2.jpg'
+    ]
+  },
+  {
+    slug: "systems_design",
+    title: "Design Systems", desc: "Modular component libraries for brand consistency.", focus_area: "content placement, ease of use by clients, accessibility", deliverable: "proffesional designs that are not only appealing but also easy to use.", category: "Design", img: "/system_design.mp4",
+    gallery: [
+      '/system_design.mp4'
+    ]
+  },
+  {
+    slug: "responsive",
+    title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", focus_area: "scales, fonts, screen sizes.", deliverable: "Apps that suit all types of screen sizes such as laptops, monitors, mobile phones, tablets etc. ", category: "Design", img: "/responsive_layout.mp4", img2: "/responsive_layout_2.jpg",
+    gallery: [
+      '/responsive_layout.mp4'
+    ]
+  },
+
+
+
+  {
+    slug: "branding",
+    title: "Visual Branding", desc: "Defining your identity through color, type, and logos. Your logos and choice of colors are as important as the website itself as they are able to define the brand, I balance color and graphics of your website to bring out the visual effect needed. ", focus_area: "visual appearance, scale, fonts, typography, images", deliverable: "high quality brands that are self selling.", category: "Graphics", img: "/visual_branding.jpeg", img2: "/visual_branding_2.jpg",
+    gallery: [
+      '/visual_branding.jpeg ',
+      '/visual_branding_2.jpg'
+    ]
+  },
+  {
+    slug: "motion_graphics",
+    title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations. Away from the boring static apps, active graphics are not only eye appealing but also an enhancement of the marketability of your business.", focus_area: "scale, animation and screen sizes.", deliverable: "visually appealing animated graphics that altogether hold the client in yoour website long enough to see what your business has to offer", category: "Graphics", img: "/motion_graphics.mp4",
+    gallery: [
+      '/motion_graphics.mp4'
+    ]
+  },
+  {
+    slug: "digital_assets",
+    title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals. In this century, wealth is not just held as tangibles, but rather digital assets such as crypto or other virtually owned minerals; With such property, a system for tracking your wealth is handy and that is where I come in.", focus_area: "inclusive dashboards, security, privacy, fast, scalability and feasibility", deliverable: "Highly secure systems that quickly respons to any changes in your digital assets such as crypro-currency", category: "Graphics", img: "/digital_assets.jpeg", img2: '/digital_assets_2.jpg',
+    gallery: [
+      '/digital_assets.jpeg',
+      '/digital_assets_2.jpg'
+    ]
+  },
+
+  {
+    slug: "web",
+    title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats. By proffesion, I am a geomatics engineering and geospatial information systems from the Dedan Kimathi university of technology, therefore spatial data analysis such as web mapping is an area of specialization for me.", focus_area: "cartography, databases, speed", deliverable: "interactive web maos that are able to communicate any message that has location stamps in it.", category: "Mapping", img: "/web_mapping.jpeg", img2: '/web_mapping_2.jpg',
+    gallery: [
+      '/web_mapping.jpeg',
+      '/web_mapping_2.jpg',
+      '/web_mapping/narumoru_sub.png'
+    ]
+  },
 
 ];
 export const TECH_STACK = [
@@ -90,12 +190,20 @@ export const TECH_STACK = [
   { name: "GitHub", icon: SiGithub, color: "#ffffff" },
   { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
   { name: "CSS3", icon: SiCss, color: "#1572B6" },
+  { name: "Google sheets", icon: SiGooglesheets, color: "#1572B6" },
+  { name: "Figma", icon: SiFigma, color: "#1572B6" },
+  { name: "Autocad", icon: SiAutodesk, color: "#1572B6" },
+  { name: "Supabase", icon: SiSupabase, color: "#1572B6" },
+  { name: "Open Layers", icon: FiMap, color: "#1572B6" },
+  {name:"Framer motion", icon:SiFramer, color:"#4169E1"},
+  {name:"Map Box", icon:SiMapbox, color:"#4169E1"}
 ]
 
-export const CONTACT =[
-  {email: "muchirijohn0018@gmail.com"},
-   {location :"Remote/ Nyeri, Nakuru; Kenya"},
-   {linkedIn:"https://www.linkedin.com/in/john-muchiri-3ba55724b/"},
-   {twitter:""},
-   {github:""}
+export const CONTACT = [
+  { email: "muchirijohn0018@gmail.com" },
+  { location: "Remote/ Nyeri, Nakuru; Kenya" },
+  { linkedIn: "https://www.linkedin.com/in/john-muchiri-3ba55724b/" },
+  { twitter: "" },
+  { github: "https://www.github.com/muchiri_codes" },
+  {SiWhatsapp:"https://wa.me/254111884025"}
 ]

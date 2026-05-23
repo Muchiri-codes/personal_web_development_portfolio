@@ -3,7 +3,6 @@
 import { ABOUT_CONTENT, HERO_CONTENT } from '../app/data/portfolio';
 import { handleDownload } from './CVDownload';
 import { User, Briefcase, Award } from 'lucide-react';
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -29,13 +28,8 @@ export const About = () => {
                 <img
                   src={HERO_CONTENT.imagePath}
                   alt="profile_image"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition duration-700 opacity-80 group-hover:opacity-100"
                 />
-              </div>
-              {/* Floating Stat Card */}
-              <div className="absolute -bottom-6 -right-6 p-3 bg-emerald-500 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-black font-black text-2xl line-height-none">5+</p>
-                <p className="text-black/80 text-xs font-bold uppercase tracking-tighter">Years of Mastery</p>
               </div>
             </div>
 

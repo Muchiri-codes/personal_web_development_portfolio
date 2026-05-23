@@ -3,7 +3,9 @@
 import { useRef } from 'react';
 import { handleFormSubmission } from '@/action/email-submission';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { SiGithub, SiWhatsapp, SiGmail,  } from 'react-icons/si';
+import { FiLinkedin } from 'react-icons/fi';
 
 
 const Contact = () => {
@@ -22,7 +24,6 @@ const formRef = useRef<HTMLFormElement>(null);
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
-          {/* Left Column: Get in Touch Info */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <h2 className="text-emerald-500 font-bold tracking-widest uppercase text-xs">
@@ -63,7 +64,7 @@ const formRef = useRef<HTMLFormElement>(null);
 
             {/* Social Links */}
             <div className="flex gap-4 pt-6">
-              {[Github, Linkedin, Twitter].map((Icon, i) => (
+              {[SiGithub, FiLinkedin, SiWhatsapp, SiGmail].map((Icon, i) => (
                 <a 
                   key={i}
                   href="#" 
@@ -81,10 +82,10 @@ const formRef = useRef<HTMLFormElement>(null);
             ref={formRef}
             action ={async (formData) =>{
               const result = await handleFormSubmission(formData);
-              if (result.success) alert ("stored in DB and email sent!");
+              if (result.success) alert ("Thank you for reaching out, I will talk to you shortly :) ");
               formRef.current?.reset();
             }}
-            className="p-8 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
+            className="p-4 md:p-8  rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-6">
              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -134,7 +135,7 @@ const formRef = useRef<HTMLFormElement>(null);
               type='submit'
               className="w-full group bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]">
                 <span>Send Message</span>
-                <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+               
               </button>
             </form>
           </div>

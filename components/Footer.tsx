@@ -57,14 +57,13 @@ export const Footer = () => {
 
          
 
-          {/* Newsletter / CTA */}
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Stay Connected</h4>
-            <div className="relative flex w-full justify-between group">
-              <div className='flex-1'>
-              <h2 className='font-bold text-md'>Be sure to join our developers team. send us your name and email address.
+            <div className="relative w-full justify-between group">
+            
+              <h2 className='font-bold text-md text-gray-400 mb-6'>Be sure to join our developers team. send us your name and email address.
               </h2>
-              </div>
+          
               <form
                 onSubmit={onSubmit}
                 className="p-5 md:p-7 flex-1 ml-2 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-5 max-w-md mx-auto"
@@ -101,7 +100,7 @@ export const Footer = () => {
             </p>
           </div>
         </div>
-         {/* Quick Links */}
+
           <div className="md:col-span-3 space-y-6">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Navigation</h4>
             <ul className="space-y-4 text-gray-500 text-sm">
@@ -116,14 +115,17 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-600 text-xs font-medium flex items-center gap-2">
-            © {new Date().getFullYear()} All rights reserved. Made with <Heart className="w-3 h-3 text-emerald-500" /> using Next.js.
+            © {new Date().getFullYear()} All rights reserved. Designed by
+            <Link href="https://linkedin.com/in/John_Muchiri">
+            <span className='text-orange-600'>muchiri</span>
+            </Link>
           </p>
 
           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest group"
           >
-            Back to top
+           Scroll to top
             <div className="p-2 rounded-full border border-white/10 group-hover:border-emerald-500/50 transition-colors">
               <ArrowUp className="w-3 h-3" />
             </div>

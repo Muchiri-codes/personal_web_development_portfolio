@@ -4,7 +4,7 @@ import { Github, Linkedin, ArrowRight, Terminal } from 'lucide-react';
 import { HERO_CONTENT } from '../app/data/portfolio';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
-const roles = ["Web Design", "API Integration", "UI/UX Design", "Fullstack Development"];
+const roles = ["Web Design", "API Integration", "UI/UX Design","Graphisc design",  "Fullstack Development", "Web Mapping"];
 
 const handleClick = () => {
   document.getElementById("services")?.scrollIntoView({
@@ -112,7 +112,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side: Video (Occupies 6 columns - 50% width) */}
+        {/* Right Side */}
         <div className="w-full lg:col-span-6 relative order-1 lg:order-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -127,7 +127,7 @@ export const Hero = () => {
                 playsInline
                 muted
                 loop
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100"
+                className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100"
               />
 
               {/* FLOATING TEXT */}
