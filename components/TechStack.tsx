@@ -17,7 +17,6 @@ export const TechStack = () => {
         {/* Tools Grid */}
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {TECH_STACK.map((tech, index) => {
-            // FIX: Assign to a Capitalized variable so React recognizes it as a component
             const Icon = tech.icon;
 
             return (
@@ -25,11 +24,9 @@ export const TechStack = () => {
                 key={index}
                 className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-white/2 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/2 transition-all duration-300"
               >
-                {/* Icon with Dynamic Hover Color & Safety Check */}
                 {Icon ? (
                   <Icon 
                     className="w-10 h-10 mb-3 text-gray-500 group-hover:scale-110 transition-transform duration-300 relative z-10" 
-                    // Using the color directly from your data since var() might not be defined globally
                     style={{ color: tech.color } as any}
                   />
                 ) : (

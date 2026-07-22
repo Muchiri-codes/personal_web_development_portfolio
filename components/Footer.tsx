@@ -28,7 +28,6 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
-          {/* Brand Column */}
           <div className="md:col-span-5 space-y-6">
             <Link href="#home" className="flex items-center gap-3 group">
               <Image

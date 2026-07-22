@@ -62,7 +62,6 @@ const formRef = useRef<HTMLFormElement>(null);
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="flex gap-4 pt-6">
               {[SiGithub, FiLinkedin, SiWhatsapp, SiGmail].map((Icon, i) => (
                 <a 
@@ -76,7 +75,6 @@ const formRef = useRef<HTMLFormElement>(null);
             </div>
           </div>
 
-          {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
             <form 
             ref={formRef}

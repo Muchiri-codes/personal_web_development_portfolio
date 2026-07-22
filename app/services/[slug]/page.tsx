@@ -9,13 +9,8 @@ interface PageProps {
 }
 
 export default function ServiceDetailPage({ params }: PageProps) {
-  // Unwrap params safely using React.use() hook
   const { slug } = use(params);
-
-  // Find the service that matches the URL slug
   const service = SERVICES_LIST.find((s: any) => s.slug === slug);
-
-  // Lightbox state tracking
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
 
   if (!service) {
@@ -23,11 +18,8 @@ export default function ServiceDetailPage({ params }: PageProps) {
   }
 
   const galleryItems = service.gallery || [];
-
-  // Helper utility function to test if a file path points to a video format
   const isVideo = (path: string) => /\.(mp4|webm|ogg)$/i.test(path);
 
-  // Keyboard navigation listener (Left/Right arrows and Escape key)
   useEffect(() => {
     if (photoIndex === null) return;
 
@@ -48,8 +40,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Back Link */}
         <Link 
           href="/#services" 
           className="group inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 text-sm font-semibold tracking-wider uppercase mb-12 transition-colors"
@@ -129,13 +119,11 @@ export default function ServiceDetailPage({ params }: PageProps) {
         </section>
       </div>
 
-      {/* --- RESPONSIVE INTERACTIVE LIGHTBOX MODAL --- */}
       {photoIndex !== null && (
         <div 
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center"
           onClick={() => setPhotoIndex(null)}
         >
-          {/* Universal Close button */}
           <button 
             onClick={() => setPhotoIndex(null)}
             className="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-emerald-500 hover:text-black transition-all text-2xl flex items-center justify-center font-bold shadow-lg"
@@ -143,7 +131,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
             &times;
           </button>
 
-          {/* 1. DESKTOP MODE LAYOUT (Horizontal Slider with Nav Arrows) */}
           <div className="hidden md:flex items-center justify-between w-full h-full px-12" onClick={(e) => e.stopPropagation()}>
             {/* Left Nav Arrow */}
             <button 
@@ -153,7 +140,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
               &#8592;
             </button>
 
-            {/* Central Desktop Image/Video Canvas Viewframe */}
             <div className="relative max-w-5xl w-full max-h-[80vh] flex flex-col items-center justify-center">
               {isVideo(galleryItems[photoIndex]) ? (
                 <video 
@@ -166,6 +152,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
               ) : (
                 <img 
                   src={galleryItems[photoIndex]} 
+                  loading='lazy'
                   alt="Expanded showcase frame desktop" 
                   className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl animate-in zoom-in-95 duration-200"
                 />
@@ -175,7 +162,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
               </p>
             </div>
 
-            {/* Right Nav Arrow */}
             <button 
               onClick={() => setPhotoIndex(photoIndex < galleryItems.length - 1 ? photoIndex + 1 : 0)}
               className="w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-emerald-500 hover:text-emerald-500 transition-all flex items-center justify-center text-xl font-bold backdrop-blur-md"
@@ -184,7 +170,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
             </button>
           </div>
 
-          {/* 2. MOBILE MODE LAYOUT (Smooth Vertical Infinite Feed Scroll) */}
           <div 
             className="flex md:hidden flex-col w-full h-full overflow-y-scroll snap-y snap-mandatory pt-20 pb-12 px-4 gap-12"
             onClick={(e) => e.stopPropagation()}
@@ -210,6 +195,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
                 ) : (
                   <img 
                     src={itemSrc} 
+                    loading='lazy'
                     alt="Expanded showcase frame mobile" 
                     className="w-full max-h-[65vh] object-contain rounded-2xl shadow-xl"
                   />

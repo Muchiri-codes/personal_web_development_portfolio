@@ -57,7 +57,6 @@ return (
  
     <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
 
-      {/* Left Side: Text (Occupies 6 columns) */}
       <div className="lg:col-span-6 space-y-8 order-2 lg:order-1 w-full">
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold tracking-widest uppercase">
           <Terminal className="w-3 h-3" />
@@ -111,7 +110,6 @@ return (
         </div>
       </div>
 
-      {/* Right Side - THE VIDEO CONTAINER FIXED */}
       <div className="w-full lg:col-span-6 relative order-1 lg:order-2">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

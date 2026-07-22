@@ -64,7 +64,6 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Right Column: Narrative & Experience */}
           <div className="lg:col-span-7 space-y-12">
             <div className="space-y-6">
               <div className="flex items-center space-x-2 text-emerald-500 font-bold tracking-widest uppercase text-xs">
@@ -88,7 +87,6 @@ export const About = () => {
               </div>
             </div>
 
-            {/* Experience List - Dark Glassmorphism Style */}
             <div className="space-y-6">
               <div className="flex items-center space-x-2 text-gray-500 font-bold tracking-widest uppercase text-xs">
                 <Briefcase className="w-4 h-4" />
