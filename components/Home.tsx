@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, ArrowRight, Terminal } from 'lucide-react';
 import { HERO_CONTENT } from '../app/data/portfolio';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { pixelify } from '@/app/layout';
 
 const roles = ["Web Design", "API Integration", "UI/UX Design","Graphisc design",  "Fullstack Development", "Web Mapping"];
 
@@ -15,8 +16,7 @@ const handleClick = () => {
 
 export const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false)
-
+  const[ isMobile, setIsMobile] = useState(false)
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(videoRef, { amount: 0.3 });
@@ -50,61 +50,40 @@ return (
     className="relative h-auto py-22 md:py-32 flex items-center overflow-hidden"
   >
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-green-900/10 blur-[100px] rounded-full" />
     </div>
 
  
     <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
 
       <div className="lg:col-span-6 space-y-8 order-2 lg:order-1 w-full">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold tracking-widest uppercase">
-          <Terminal className="w-3 h-3" />
-          <span>{HERO_CONTENT.badge}</span>
-        </div>
-
         <div className="space-y-4">
-          <motion.h1
-            initial={{ opacity: 0, rotateY: 0 }}
-            whileInView={
-              isMobile
-                ? { opacity: 1, rotateY: [0, 180, 360] }
-                : { opacity: 1 }
-            }
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-            style={{ originX: 0.5, perspective: 1000 }}
-            className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9]"
+          <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-black text-amber-500 tracking-tighter leading-[0.9]"
           >
             {HERO_CONTENT.title} <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-green-600">
+            <span className="bg-clip-text text-black bg-linear-to-r">
               {HERO_CONTENT.titleGradient}
             </span>
-          </motion.h1>
+          </h1>
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed">
             {HERO_CONTENT.description}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-6">
-          <motion.button
-            initial={{ borderRadius: '12px' }}
-            whileHover={{ borderRadius: "100px", scale: 1.05, backgroundColor: "#10b981" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          <button
             onClick={handleClick}
-            className="group relative w-full sm:w-auto text-center justify-center px-8 py-4 bg-emerald-500 text-black font-bold overflow-hidden shadow-[0_10px_30px_rgba(16,185,129,0.3)]"
+            className="group relative rounded-md w-full sm:w-auto text-center justify-center px-8 py-4 bg-emerald-500 text-black font-bold overflow-hidden"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               View Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
-          </motion.button>
+          </button>
           <div className="flex items-center gap-5 text-gray-500 mx-auto sm:mx-0">
-            <a href={HERO_CONTENT.socials.github} className="hover:text-emerald-400 transition-colors">
-              <Github className="w-6 h-6" />
+            <a href={HERO_CONTENT.socials.github} className="hover:text-emerald-400  font-bold transition-colors">
+              <Github className="w-8 h-8" />
             </a>
             <a href={HERO_CONTENT.socials.linkedin} className="hover:text-emerald-400 transition-colors">
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-8 h-8" />
             </a>
           </div>
         </div>
@@ -125,7 +104,7 @@ return (
               playsInline
               muted
               loop
-              className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100"
+              className="w-full h-full object-cover transition duration-700 opacity-60 hover:opacity-100"
             />
 
             {/* FLOATING TEXT */}
@@ -139,7 +118,7 @@ return (
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.4 }}
-                    className="text-emerald-400 font-black text-xl sm:text-2xl md:text-4xl uppercase tracking-tighter block"
+                    className= {`text-emerald-400  ${pixelify.className} text-xl sm:text-2xl md:text-4xl uppercase tracking-tighter block`}
                   >
                     {roles[roleIndex]}
                   </motion.span>

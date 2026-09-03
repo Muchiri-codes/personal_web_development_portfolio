@@ -17,11 +17,11 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 md:px-6 py-4">
-      <div className="max-w-7xl mx-auto p-4 h-20  flex items-center justify-between">
+    <header className="fixed border-black/30 top-0 left-0 w-full z-30 px-4 md:px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         <div className="flex items-center">
-          <Link href="#home" className="transition-transform hover:scale-105 active:scale-95 shrink-0">
+          <Link href="#home" className="transition-transform hover:scale-115 active:scale-95 shrink-0">
             <Image
               className="rounded-full border border-emerald-500/20"
               src="/logo.png"
@@ -36,14 +36,14 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop */}
         <nav className="flex items-center gap-8">
           <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-400 hover:text-emerald-500 transition-colors"
+                className="text-orange-400 hover:text-emerald-500 transition-colors"
               >
                 {link.name}
               </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-white/5 border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-white focus:outline-none focus:border-emerald-500/50 focus:bg-white/10 transition-all w-40 focus:w-60"
+              className="border border-black/10 rounded-full pl-10 pr-4 py-2 text-sm text-black focus:outline-none focus:border-emerald-500/50 focus:bg-white/10 transition-all w-40 focus:w-60"
             />
           </div>
 
@@ -77,9 +77,7 @@ export default function Navbar() {
               exit={{ opacity: 0, x: 50, scale: 0.9 }}
               transition={{ type: "spring", damping: 20, stiffness: 300 }}
 
-              className="
-        absolute top-24 right-8 w-64 
-        bg-[#0a0a0a]/95 backdrop-blur-xl 
+              className="absolute top-24 right-8 w-64  bg-[#0a0a0a]/95 backdrop-blur-xl 
         border border-white/10 rounded-2xl 
         p-6 md:hidden z-50 shadow-2xl
       "

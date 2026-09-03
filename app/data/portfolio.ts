@@ -12,7 +12,6 @@ import {
 import { FiMap, FiCpu, FiLayers } from 'react-icons/fi';
 
 export const HERO_CONTENT = {
-  badge: "Available for freelance & full-time",
   title: "Crafting digital",
   titleGradient: "experiences.",
   description: "I bridge the gap between complex code and elegant design. A full-spectrum creator specializing in the modern web.",
