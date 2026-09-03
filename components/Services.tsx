@@ -12,7 +12,7 @@ export const Services = () => {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       id="services"
-      className="py-24 bg-[#0a0a0a]"
+      className="py-24"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 

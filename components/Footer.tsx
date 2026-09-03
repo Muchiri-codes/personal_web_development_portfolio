@@ -21,7 +21,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#050505] border-t border-white/5 pt-20 pb-10 relative overflow-hidden">
+    <footer className=" border-t border-white/5 pt-20 pb-10 relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1px bg-linear-to-r from-transparent via-emerald-500/50 to-transparent" />
 

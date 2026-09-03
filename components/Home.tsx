@@ -47,7 +47,7 @@ export const Hero = () => {
 return (
   <section
     id="home"
-    className="relative h-auto py-22 md:py-32 flex items-center bg-[#0a0a0a] overflow-hidden"
+    className="relative h-auto py-22 md:py-32 flex items-center overflow-hidden"
   >
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full" />

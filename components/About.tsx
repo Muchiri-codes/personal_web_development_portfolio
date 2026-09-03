@@ -13,9 +13,10 @@ export const About = () => {
     whileInView={{opacity:1, y:0}}
     viewport={{once:false, amount:0.2}}
     transition={{duration:0.8, ease:"easeOut"}}
-    id="about" className="relative bg-[#0a0a0a] overflow-hidden">
-      {/* Subtle background glow to separate sections */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-125 h-125 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+    id="about" className="relative overflow-hidden">
+ 
+
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-125 h-125 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">

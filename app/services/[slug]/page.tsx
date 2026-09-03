@@ -38,7 +38,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
   }, [photoIndex, galleryItems]);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white py-24 px-6 md:px-12">
+    <main className="min-h-screen text-black py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <Link 
           href="/#services" 
@@ -49,7 +49,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
         {/* Hero Meta Header */}
         <div className="border-b border-white/10 pb-12 mb-16">
-          <span className="inline-block px-3 py-1 mb-4 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-widest">
+          <span className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-widest">
             {service.category}
           </span>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6">{service.title}</h1>
@@ -212,3 +212,11 @@ export default function ServiceDetailPage({ params }: PageProps) {
     </main>
   );
 }
+
+
+
+
+
+
+
+

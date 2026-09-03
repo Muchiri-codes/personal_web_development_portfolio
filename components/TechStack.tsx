@@ -2,7 +2,7 @@ import { TECH_STACK } from '@/app/data/portfolio';
 
 export const TechStack = () => {
   return (
-    <section id="skills" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
+    <section id="skills" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
