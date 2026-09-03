@@ -34,10 +34,10 @@ export const ABOUT_CONTENT = {
     { label: "Projects", value: "30+" }
   ],
   experience: [
-    { year: "In Progress", role: "Web mapping", company: "Educational >> Commercial" },
-    { year: "08/2024 - Present", role: "Full stack Web Developer", company: "Freelancing + Personal websites" },
-    { year: "01/2024 - 08/2024", role: "Web Designer", company: "Freelancing" },
-    { year: "2023 - 2024", role: "Graphic Designer", company: "Freelancing / Private" },
+    { year: "In Progress", role: "Web mapping", company: "Educational >> Commercial", skills: ["map box", "route navigation", "land use land cover maps", "Indices derivatives eg. NDVI, BSI", "3D data visualization", "Hotspot mapping", "Suitability mapping"] },
+    { year: "08/2024 - Present", role: "Full stack Web Developer", company: "Freelancing + Personal websites", skills:["HTML", "CSS", "Javascript", "Typescript", "SASS", "Node JS", "Mongo DB", "Postgress", "MySQL", "RESTful APIs", "Git & Github ", "Django", "Express js", "React", "Next Js", "Tailwind CSS", "Postman", "Jupyter lab"] },
+    { year: "01/2024 - 08/2024", role: "Web Designer", company: "Freelancing", skills:["Figma", "Webflow" ,'Wordpress', "WIX"] },
+    { year: "2023 - 2024", role: "Graphic Designer", company: "Freelancing / Private", skills:["Adobe photoshop","Figma", "Visual hierachy", "Typography", "Color Theory", "Digital Design", "Ideas generation", "UI/UX prototyping"]},
   ]
 };
 
