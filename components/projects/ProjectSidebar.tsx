@@ -5,7 +5,7 @@ import { categories } from "@/app/data/projects/categories";
 
 export default function ProjectSidebar() {
   return (
-    <aside className="w-64 shrink-0">
+    <aside className="w-64 shrink-0 mt-30">
       <div className="sticky top-24">
 
         <h2 className="mb-4 text-sm font-semibold">
