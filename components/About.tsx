@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export const About = () => {
-  // State for each experience's dropdown – we store an array of booleans
   const [openStates, setOpenStates] = useState(
     ABOUT_CONTENT.experience.map(() => false)
   );
@@ -30,10 +29,10 @@ export const About = () => {
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Left Column: Stats & Image Holder */}
+          {/* Left Column; Stats & Image */}
           <div className="lg:col-span-5 space-y-8">
             <div className="relative group">
-              <div className="aspect-portrait rounded-3xl overflow-hidden bg-[#111] border border-white/5">
+              <div className="aspect-portrait rounded-3xl overflow-hidden bg-[#111] border border-yellow-500">
                 <img
                   src={HERO_CONTENT.imagePath}
                   alt="profile_image"
@@ -49,7 +48,7 @@ export const About = () => {
                   key={i}
                   className="sm:p-3 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition"
                 >
-                  <p className="text-2xl font-bold text-white">{stat.value}</p>
+                  <p className="text-2xl font-bold text-yellow-500">{stat.value}</p>
                   <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">
                     {stat.label}
                   </p>
@@ -85,15 +84,11 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Right Column: Story & Experience Timeline */}
+          {/* Right Column*/}
           <div className="lg:col-span-7 space-y-12">
             <div className="space-y-6">
-              <div className="flex items-center space-x-2 text-emerald-500 font-bold tracking-widest uppercase text-xs">
-                <User className="w-4 h-4" />
-                <span>The Story</span>
-              </div>
 
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-600 leading-tight">
                 Building the future of the web, <br />
                 <span className="text-emerald-500 underline decoration-emerald-500/20 underline-offset-8">
                   one pixel at a time.
@@ -111,30 +106,27 @@ export const About = () => {
 
             {/* Experience Timeline with Dropdowns */}
             <div className="space-y-6">
-              <div className="flex items-center space-x-2 text-gray-500 font-bold tracking-widest uppercase text-xs">
-                <Briefcase className="w-4 h-4" />
-                <span>Professional Experience</span>
-              </div>
-
               <div className="space-y-0 relative">
+
                 {/* Vertical line behind nodes */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-emerald-500/20" />
+                <div className="absolute left-6 top-0 bottom-0 w-1 bg-yellow-600" />
 
                 {ABOUT_CONTENT.experience.map((exp, index) => {
                   const isOpen = openStates[index];
 
                   return (
                     <div key={index} className="relative pl-14 pb-12 last:pb-0">
+
                       {/* Node circle */}
-                      <div className="absolute left-0 top-1.5 w-12 h-12 rounded-full bg-[#111] border-2 border-emerald-500/40 flex items-center justify-center shadow-lg shadow-emerald-500/10">
-                        <span className="text-emerald-400 font-bold text-xs">{index + 1}</span>
+                      <div className="absolute left-0 top-1.5 w-12 h-12 rounded-full bg-yellow-600 flex items-center justify-center shadow-lg shadow-emerald-500/10">
+                        <span className="text-white font-bold text-xs">{index + 1}</span>
                       </div>
 
                       {/* Card */}
                       <div className="p-6 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/5 transition group">
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                           <div className="flex-1">
-                            <h4 className="text-white font-bold text-lg group-hover:text-emerald-400 transition">
+                            <h4 className="text-emerald-500 font-bold text-lg group-hover:text-yellow-500 transition">
                               {exp.role}
                             </h4>
                             <p className="text-gray-500 text-sm">{exp.company}</p>
@@ -143,6 +135,7 @@ export const About = () => {
                             <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-medium">
                               {exp.year}
                             </span>
+                            
                             {/* Toggle button */}
                             <button
                               onClick={() => toggleOpen(index)}
