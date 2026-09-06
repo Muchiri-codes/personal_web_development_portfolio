@@ -12,8 +12,8 @@ export const categories = [
     name: "GIS Analysis",
   },
   {
-    id: "spatial-analysis",
-    name: "Spatial Analysis",
+    id: "suitability-analysis",
+    name: "Suitability analysis",
   },
   {
     id: "python",

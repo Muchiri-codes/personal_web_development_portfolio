@@ -9,11 +9,8 @@ interface ProjectPageProps {
   }>;
 }
 
-export default async function ProjectPage({
-  params,
-}: ProjectPageProps) {
-  const { slug } = await params;
-
+export default async function ProjectPage({params}:ProjectPageProps) { 
+  const {slug} = await params;
   const project = projects.find(
     (project) => project.slug === slug
   );
@@ -24,22 +21,19 @@ export default async function ProjectPage({
 
   return (
     <main className="min-h-screen bg-background">
-      {/* ─────────────────────────────────────────────
-          HERO / PROJECT HEADER
-      ───────────────────────────────────────────── */}
 
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-28">
-        {/* Back button */}
         <Link
           href="/projects"
           className="mb-10 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
-          <span>←</span>
+          <span className="hover:scale-110">←</span>
           Back to Projects
         </Link>
 
         <div className="grid gap-10 lg:grid-cols-[1fr_380px] lg:items-end">
-          {/* Project information */}
+
+          {/* Project info */}
           <div>
             <div className="mb-5 flex flex-wrap items-center gap-3">
               <span className="rounded-full border px-3 py-1 text-xs font-medium">
@@ -86,24 +80,21 @@ export default async function ProjectPage({
           </div>
 
           {/* Project thumbnail */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border bg-muted">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl border bg-muted">
             <Image
               src={project.thumbnail}
               alt={project.title}
               fill
-              priority
+              priority 
               className="object-cover"
             />
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────
-          PROJECT CONTENT
-      ───────────────────────────────────────────── */}
-
       <div className="mx-auto max-w-6xl px-6 pb-24">
         <div className="grid gap-12 lg:grid-cols-[220px_1fr]">
+
           {/* Sticky table of contents */}
           <aside className="hidden lg:block">
             <div className="sticky top-24">
@@ -181,10 +172,6 @@ export default async function ProjectPage({
           {/* Main content */}
           <article className="min-w-0 space-y-20">
 
-            {/* ─────────────────────────────────────────
-                OVERVIEW
-            ───────────────────────────────────────── */}
-
             {project.overview && (
               <section id="overview" className="scroll-mt-24">
                 <SectionHeading
@@ -198,10 +185,7 @@ export default async function ProjectPage({
               </section>
             )}
 
-            {/* ─────────────────────────────────────────
-                OBJECTIVES
-            ───────────────────────────────────────── */}
-
+            {/* objectives */}
             {project.objectives &&
               project.objectives.length > 0 && (
                 <section
@@ -237,10 +221,7 @@ export default async function ProjectPage({
                 </section>
               )}
 
-            {/* ─────────────────────────────────────────
-                DATA
-            ───────────────────────────────────────── */}
-
+                {/* data */}
             {project.datasets &&
               project.datasets.length > 0 && (
                 <section
@@ -252,10 +233,10 @@ export default async function ProjectPage({
                     title="Data & Sources"
                   />
 
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                     {project.datasets.map((dataset) => (
                       <div
-                        key={dataset}
+                        key={dataset} //a key is needed after mapping
                         className="rounded-xl border p-5"
                       >
                         <p className="text-sm font-medium">
@@ -267,10 +248,7 @@ export default async function ProjectPage({
                 </section>
               )}
 
-            {/* ─────────────────────────────────────────
-                METHODOLOGY
-            ───────────────────────────────────────── */}
-
+              {/* methodology */}
             {project.methodology &&
               project.methodology.length > 0 && (
                 <section
@@ -283,8 +261,9 @@ export default async function ProjectPage({
                   />
 
                   <div className="relative">
+
                     {/* Vertical line */}
-                    <div className="absolute left-[15px] top-3 h-[calc(100%-24px)] w-px bg-border" />
+                    <div className="absolute left-3.75 top-3 h-[calc(100%-24px)] w-px bg-border" />
 
                     <div className="space-y-7">
                       {project.methodology.map(
@@ -313,10 +292,7 @@ export default async function ProjectPage({
                 </section>
               )}
 
-            {/* ─────────────────────────────────────────
-                RESULTS
-            ───────────────────────────────────────── */}
-
+              {/* results */}
             {project.results &&
               project.results.length > 0 && (
                 <section
@@ -355,10 +331,7 @@ export default async function ProjectPage({
                 </section>
               )}
 
-            {/* ─────────────────────────────────────────
-                CODE
-            ───────────────────────────────────────── */}
-
+            {/* CODE */}
             {project.code && (
               <section className="scroll-mt-24">
                 <SectionHeading
@@ -388,10 +361,7 @@ export default async function ProjectPage({
               </section>
             )}
 
-            {/* ─────────────────────────────────────────
-                CHALLENGES
-            ───────────────────────────────────────── */}
-
+            {/* challenges*/}
             {project.challenges &&
               project.challenges.length > 0 && (
                 <section
@@ -420,10 +390,7 @@ export default async function ProjectPage({
                 </section>
               )}
 
-            {/* ─────────────────────────────────────────
-                CONCLUSION
-            ───────────────────────────────────────── */}
-
+            {/*  CONCLUSION */}
             {project.conclusion && (
               <section
                 id="conclusion"
@@ -446,9 +413,7 @@ export default async function ProjectPage({
         </div>
       </div>
 
-      {/* ─────────────────────────────────────────────
-          FOOTER NAVIGATION
-      ───────────────────────────────────────────── */}
+      {/*  FOOTER NAVIGATION */}
 
       <section className="border-t">
         <div className="mx-auto max-w-6xl px-6 py-12">
@@ -464,11 +429,7 @@ export default async function ProjectPage({
   );
 }
 
-
-/* ─────────────────────────────────────────────────────
-   SECTION HEADING
-───────────────────────────────────────────────────── */
-
+  //  SECTION HEADING
 function SectionHeading({
   number,
   title,

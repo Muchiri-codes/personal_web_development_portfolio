@@ -1,12 +1,12 @@
-export type category = [
-  'Remote sensing',
-  'Suitability analysis',
-  'Machine learning',
-  'Web mapping',
-  'Cartography',
-  'CAD ',
+export type category = 
+  'Remote sensing'
+  'Suitability analysis'
+  'Machine learning'
+  'Web mapping'
+  'Cartography'
+  'CAD '
   'Topographical mapping'
-]
+
 
 
 export interface Project {
@@ -33,6 +33,8 @@ export interface Project {
   code?: {
     language: string;
     content: string;
+    filename:string;
+   
   };
 
   challenges?: string[];

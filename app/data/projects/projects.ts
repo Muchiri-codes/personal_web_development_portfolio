@@ -69,7 +69,7 @@ export const projects: Project[] = [
   {
     slug: "bsi-analysis",
     title: "Bare Soil Index Analysis",
-    category: "remote-sensing",
+    category: "Remote sensing",
 
     shortDescription:
       "Identification and analysis of exposed bare surfaces using satellite imagery.",
@@ -98,8 +98,7 @@ export const projects: Project[] = [
   {
     slug: "site-suitability-analysis",
     title: "Site Suitability Analysis",
-    category: "spatial-analysis",
-
+    category: "Suitability analysis",
     shortDescription:
       "Multi-criteria GIS analysis for identifying suitable locations.",
 
