@@ -23,13 +23,12 @@ export default function ProjectCard({
 
       <div className="p-5">
 
-        <div className={`mb-2 text-sm font-medium ${
-          project.status === "Completed" ? "text-green-600"
-          :project.status === "In Progress" ? "text-yellow-600"
-          :project.status === "Planned" ?"text-blue-600"
-          :"text-gray-600"
+        <div className={`mb-2 text-sm font-medium ${project.status === "Completed" ? "text-green-600"
+            : project.status === "In Progress" ? "text-yellow-600"
+              : project.status === "Planned" ? "text-blue-600"
+                : "text-gray-600"
           }`}>
-            {project.status}
+          {project.status}
         </div>
 
 
