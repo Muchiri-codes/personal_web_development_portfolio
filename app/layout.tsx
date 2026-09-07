@@ -2,17 +2,12 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import { Pixelify_Sans } from "next/font/google";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
-const pixelify = Pixelify_Sans({
-  weight:['400', '500', '600', '700'],
-  subsets:['latin']
-})
 const metadata: Metadata = {
   title: "John's portfolio",
   description: "full stack web developer based in Nyeri, Kenya",
@@ -42,6 +37,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-export {pixelify};

@@ -6,7 +6,7 @@ import {
   SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui,
   SiNodedotjs, SiWebpack, SiGithub, SiHtml5, SiCss3,
    SiGooglesheets, SiFramer,
-  SiMapbox, SiFigma, SiSupabase, SiAutodesk,
+  SiMapbox, SiFigma, SiSupabase, SiAutodesk,SiAdobe, SiVscodium,
   SiWhatsapp
 } from 'react-icons/si';
 import { FiMap, FiCpu, FiLayers } from 'react-icons/fi';
@@ -30,7 +30,7 @@ export const ABOUT_CONTENT = {
     "Today, I help businesses solve complex problems through clean code and user-centric design. Whether it's building a high-performance Next.js application or crafting a brand identity, I focus on quality and impact."
   ],
   stats: [
-    { label: "Years Exp.", value: "2+" },
+    { label: "Years Exp.", value: "4+" },
     { label: "Projects", value: "30+" }
   ],
   experience: [
@@ -62,11 +62,10 @@ export const SERVICES = [
   }
 ];
 export const SERVICES_LIST = [
-
   {
     slug: "fullstack",
     title: "Fullstack Apps",
-    desc: "Building robust Next.js applications with scalable backends. My apps are built for effective user journy and an easy to debug code that is scalable incase there is need to upgrade your website coverage.", focus_area: "scale, ease of debugging, databases, self-contained.", deliverable: "customer friendly apps",
+    desc: "Building robust Next.js applications with scalable backends. My apps are built for effective user journey and an easy to debug code that is scalable incase there is need to upgrade your website coverage.", focus_area: "scale, ease of debugging, databases, self-contained.", deliverable: "customer friendly apps",
     category: "Development",
     img: "/fullstack.png",
     img2: "/fullstack_2.jpg",

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, ArrowRight, Terminal } from 'lucide-react';
 import { HERO_CONTENT } from '../app/data/portfolio';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { pixelify } from '@/app/layout';
+import { pixelify } from '@/lib/fonts';
 
 const roles = ["Web Design", "API Integration", "UI/UX Design","Graphisc design",  "Fullstack Development", "Web Mapping"];
 
