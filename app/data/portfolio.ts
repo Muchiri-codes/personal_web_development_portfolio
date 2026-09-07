@@ -4,7 +4,7 @@ import React from 'react';
 import {
   SiReact, SiNextdotjs, SiJavascript, SiTypescript,
   SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui,
-  SiNodedotjs, SiWebpack, SiGithub, SiHtml5, SiCss3,
+  SiNodedotjs, SiWebpack, SiGithub, SiHtml5,
    SiGooglesheets, SiFramer,
   SiMapbox, SiFigma, SiSupabase, SiAutodesk,SiAdobe, SiVscodium,
   SiWhatsapp
@@ -187,7 +187,6 @@ export const TECH_STACK = [
   { name: "Webpack", icon: SiWebpack, color: "#8DD6F9" },
   { name: "GitHub", icon: SiGithub, color: "#ffffff" },
   { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", icon: SiCss3, color: "#1572B6" },
   { name: "Google sheets", icon: SiGooglesheets, color: "#1572B6" },
   { name: "Figma", icon: SiFigma, color: "#1572B6" },
   { name: "Autocad", icon: SiAutodesk, color: "#1572B6" },
