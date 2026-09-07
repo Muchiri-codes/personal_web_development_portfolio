@@ -6,7 +6,7 @@ import {
   SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui,
   SiNodedotjs, SiWebpack, SiGithub, SiHtml5,
    SiGooglesheets, SiFramer,
-  SiMapbox, SiFigma, SiSupabase, SiAutodesk,SiAdobe, SiVscodium,
+  SiMapbox, SiFigma, SiSupabase, SiAutodesk,
   SiWhatsapp
 } from 'react-icons/si';
 import { FiMap, FiCpu, FiLayers } from 'react-icons/fi';
