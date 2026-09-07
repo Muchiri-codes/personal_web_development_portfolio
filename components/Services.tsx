@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SERVICES_LIST } from "@/app/data/portfolio";
-import { pixelify } from "@/app/layout";
 
 export const Services = () => {
   return (
@@ -60,7 +59,7 @@ export const Services = () => {
                 </div>
 
                 <div className="flex-1 flex flex-col justify-center items-center text-center bg-yellow-600">
-                  <span className={`inline-block py-1 mb-3 ${pixelify.className}rounded-full text-black text-xs font-bold uppercase tracking-wider`}>
+                  <span className={`inline-block py-1 mb-3 rounded-full text-black text-xs font-bold uppercase tracking-wider`}>
                     {service.category}
                   </span>
 

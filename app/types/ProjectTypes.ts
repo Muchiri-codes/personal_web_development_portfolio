@@ -1,11 +1,11 @@
 export type category = 
-  'Remote sensing'
-  'Suitability analysis'
-  'Machine learning'
-  'Web mapping'
-  'Cartography'
-  'CAD '
-  'Topographical mapping'
+  'Remote sensing' |
+  'Suitability analysis' |
+  'Machine learning' |
+  'Web mapping' |
+  'Cartography' |
+  'CAD ' |
+  'Topographical mapping';
 
 
 

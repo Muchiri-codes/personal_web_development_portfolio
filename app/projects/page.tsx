@@ -1,13 +1,16 @@
 import ProjectSidebar from "@/components/projects/ProjectSidebar";
 import ProjectGrid from "@/components/projects/ProjectGrid";
 import { projects } from "../data/projects/projects";
+import { Suspense } from "react";
 
 export default function ProjectsPage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-24">
       <div className="flex gap-10">
-
+        <Suspense fallback={<div>Loading filters...</div>}>
         <ProjectSidebar />
+        </Suspense>
+        
 
         <section id = "projects" className="min-w-0 flex-1">
 
