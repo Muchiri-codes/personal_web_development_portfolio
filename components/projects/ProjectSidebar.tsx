@@ -16,7 +16,7 @@ export default function ProjectSidebar() {
       <div className="relative left-0 top-0 z-10 flex flex-col items-center">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className=" flex h-8 w-8 items-center justify-center rounded-full bg-background shadow-md transition hover:bg-muted mt-10 text-green-700 hover:scale-120 hover:text-yellow-500" 
+          className=" flex h-8 w-8 items-center justify-center rounded-full bg-background shadow-md transition hover:bg-muted mt-10 text-green-700 hover:scale-120 hover:text-yellow-500m run " 
           aria-label="Toggle project categories"
         >
           <LucideSlidersHorizontal size={17} strokeWidth={2.5} />

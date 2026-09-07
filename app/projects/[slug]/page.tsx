@@ -40,7 +40,12 @@ export default async function ProjectPage({params}:ProjectPageProps) {
                 {project.category.replace("-", " ")}
               </span>
 
-              <span className="rounded-full bg-muted px-3 py-1 text-xs">
+              <span className={`rounded-full text-white bg-muted px-3 py-1 text-xs ${
+                project.status === "Completed"? "bg-green-600"
+                : project.status ==="In Progress"? "bg-yellow-600"
+                :project.status ==="Planned"? "bg-red-500" 
+                :"text-gray-600"
+              }`}>
                 {project.status}
               </span>
 

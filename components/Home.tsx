@@ -57,14 +57,14 @@ return (
 
       <div className="lg:col-span-6 space-y-8 order-2 lg:order-1 w-full">
         <div className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-black text-amber-500 tracking-tighter leading-[0.9]"
+          <h1 className="text-3xl sm:text-4xl md:text-6xl xl:text-7xl font-black text-amber-500 tracking-tighter leading-[0.9] "
           >
             {HERO_CONTENT.title} <br />
             <span className="bg-clip-text text-black bg-linear-to-r">
               {HERO_CONTENT.titleGradient}
             </span>
           </h1>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed">
+          <p className="mt-4 text-gray-400 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed">
             {HERO_CONTENT.description}
           </p>
         </div>

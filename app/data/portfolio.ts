@@ -12,7 +12,7 @@ import {
 import { FiMap, FiCpu, FiLayers } from 'react-icons/fi';
 
 export const HERO_CONTENT = {
-  title: "Crafting digital",
+  title: "I'm John, a crafter of digital",
   titleGradient: "experiences.",
   description: "I bridge the gap between complex code and elegant design. A full-spectrum creator specializing in the modern web.",
   imagePath: "/profile.jpeg",
