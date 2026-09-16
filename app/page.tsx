@@ -6,6 +6,7 @@ import { TechStack } from '@/components/TechStack';
 import { Footer } from '@/components/Footer';
 import Contact from '@/components/Contact';
 import ProjectsPage from './projects/page';
+import GISVisualization from '@/components/GISVisualize';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <GISVisualization />
         <ProjectsPage />
         <Contact />
         <TechStack />
