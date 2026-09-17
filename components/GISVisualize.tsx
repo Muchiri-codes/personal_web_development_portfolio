@@ -61,7 +61,7 @@ const desktopPositions = [
 const mobilePositions = [
   // Far right
   {
-    x: 320,
+    x: 270,
     y: 45,
     scale: 0.5,
     rotateY: -45,
@@ -71,7 +71,7 @@ const mobilePositions = [
 
   // Right
   {
-    x: 190,
+    x: 160,
     y: 20,
     scale: 0.75,
     rotateY: -25,
@@ -91,7 +91,7 @@ const mobilePositions = [
 
   // Left
   {
-    x: -190,
+    x: -160,
     y: 20,
     scale: 0.75,
     rotateY: 25,
@@ -101,7 +101,7 @@ const mobilePositions = [
 
   // Far left
   {
-    x: -320,
+    x: -270,
     y: 45,
     scale: 0.5,
     rotateY: 45,
@@ -139,7 +139,7 @@ export default function GISVisualization() {
   const positions = isMobile ? mobilePositions : desktopPositions;
 
   return (
-    <section className="relative w-full mt-40 sm:mb-0 sm:pt-20 sm:pb-0 overflow-x-hidden">
+    <section className="relative w-full mt-40 sm:mb-0 sm:pt-20 sm:pb-0">
       <div className="relative mx-auto h-87.5 sm:h-107.5  w-full  max-w-300 "
         style={{ perspective: isMobile ? "900px" : "1400px" }}>
         {maps.map((map, index) => {
