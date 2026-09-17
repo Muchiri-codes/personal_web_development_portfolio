@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        
+        <GISVisualization />
         <ProjectsPage />
         <Contact />
         <TechStack />

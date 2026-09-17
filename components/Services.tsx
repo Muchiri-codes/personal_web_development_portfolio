@@ -45,7 +45,7 @@ const ServiceCard = ({ service, index, scrollDir }: ServiceCardProps) => {
                   stiffness: 180,
                   damping: 18,
                   mass: 0.8,
-                  delay: (index % 3) * 0.1, // Stagger effect across rows on desktop
+                  delay: (index % 3) * 0.1, 
                 },
           },
         }}
