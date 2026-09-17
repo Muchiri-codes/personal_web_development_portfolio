@@ -60,54 +60,15 @@ const desktopPositions = [
 
 const mobilePositions = [
   // Far right
-  {
-    x: 270,
-    y: 45,
-    scale: 0.5,
-    rotateY: -45,
-    opacity: 0.2,
-    z: -300,
-  },
-
+  { x: 180, y: 45, scale: 0.5, rotateY: -45, opacity: 0.2, z: -300 },
   // Right
-  {
-    x: 160,
-    y: 20,
-    scale: 0.75,
-    rotateY: -25,
-    opacity: 0.6,
-    z: -100,
-  },
-
+  { x: 100, y: 20, scale: 0.75, rotateY: -25, opacity: 0.6, z: -100 },
   // FRONT
-  {
-    x: 0,
-    y: 0,
-    scale: 1,
-    rotateY: 0,
-    opacity: 1,
-    z: 100,
-  },
-
+  { x: 0, y: 0, scale: 1, rotateY: 0, opacity: 1, z: 100 },
   // Left
-  {
-    x: -160,
-    y: 20,
-    scale: 0.75,
-    rotateY: 25,
-    opacity: 0.6,
-    z: -100,
-  },
-
+  { x: -100, y: 20, scale: 0.75, rotateY: 25, opacity: 0.6, z: -100 },
   // Far left
-  {
-    x: -270,
-    y: 45,
-    scale: 0.5,
-    rotateY: 45,
-    opacity: 0.2,
-    z: -300,
-  },
+  { x: -180, y: 45, scale: 0.5, rotateY: 45, opacity: 0.2, z: -300 },
 ];
 
 export default function GISVisualization() {
@@ -139,7 +100,7 @@ export default function GISVisualization() {
   const positions = isMobile ? mobilePositions : desktopPositions;
 
   return (
-    <section className="relative w-full mt-0 mb-20 sm:mb-0 sm:pt-20 sm:pb-0">
+    <section className="relative w-full mt-0 mb-20 sm:mb-0 sm:pt-20 sm:pb-0 overflow-x-hidden">
       <div className="relative mx-auto h-87.5 sm:h-107.5  w-full  max-w-300 overflow-x-clip"
         style={{ perspective: isMobile ? "900px" : "1400px" }}>
         {maps.map((map, index) => {
