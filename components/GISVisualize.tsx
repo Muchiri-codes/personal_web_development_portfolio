@@ -140,7 +140,7 @@ export default function GISVisualization() {
 
   return (
     <section className="relative w-full mt-40 sm:mb-0 sm:pt-20 sm:pb-0 overflow-x-hidden">
-      <div className="relative mx-auto h-87.5 sm:h-107.5  w-full  max-w-300 overflow-x-hidden  "
+      <div className="relative mx-auto h-87.5 sm:h-107.5  w-full  max-w-300 "
         style={{ perspective: isMobile ? "900px" : "1400px" }}>
         {maps.map((map, index) => {
           const positionIndex =
