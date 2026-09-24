@@ -90,7 +90,7 @@ export const About = () => {
 
               <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-600 leading-tight">
                 Building the future of the web, <br />
-                <span className="text-emerald-500 underline decoration-emerald-500/20 underline-offset-8">
+                <span className="text-emerald-500 decoration-emerald-500/20 underline-offset-8">
                   one pixel at a time.
                 </span>
               </h2>

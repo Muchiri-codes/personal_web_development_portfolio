@@ -4,12 +4,9 @@ export const TechStack = () => {
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
-        {/* Header */}
+      
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-emerald-500 font-bold tracking-widest uppercase text-xs">
-            Capabilities
-          </h2>
-          <h3 className="text-4xl font-black text-white tracking-tighter">
+          <h3 className="text-4xl font-black text-yellow-400 tracking-tighter">
             My Modern Toolset
           </h3>
         </div>

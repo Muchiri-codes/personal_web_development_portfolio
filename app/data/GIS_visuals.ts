@@ -2,26 +2,26 @@ export const maps = [
   {
     title: "NDVI",
     description: "Shows vegetation density and vegetation health.",
-    image: "/maps/ndvi.jpg",
+    image: "/indices/ndvi.png",
   },
   {
     title: "BSI",
     description: "Highlights exposed soil and bare surfaces.",
-    image: "/maps/bsi.jpg",
+    image: "/indices/bsi.jpg",
   },
   {
-    title: "MNDWI",
-    description: "Highlights surface water features.",
-    image: "/maps/mndwi.jpg",
+    title: "Tasseled cap wetness",
+    description: "Shows the quantity and spread of water content in an area",
+    image: "/indices/wetness.png",
   },
   {
-    title: "NDTI",
-    description: "Shows relative water turbidity.",
-    image: "/maps/ndti.jpg",
+    title: "LULC",
+    description: "Shows the multi-purpose land utilization and the size of every utility",
+    image: "/indices/LULC.png",
   },
   {
-    title: "Land Use / Land Cover",
-    description: "Shows the spatial distribution of land-cover classes.",
-    image: "/maps/lulc.jpg",
+    title: "Population Density",
+    description: "Shows the spatial distribution of people in a given locality. Usually as people per given area size",
+    image: "/indices/population.png",
   },
 ];

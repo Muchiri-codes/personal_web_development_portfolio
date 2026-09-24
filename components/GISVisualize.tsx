@@ -138,6 +138,7 @@ export default function GISVisualization() {
                     src={map.image}
                     alt={map.title}
                     fill
+                    loading="lazy"
                     className="object-contain sm:rounded-2xl rounded-xl"
                     sizes="(max-width: 640px) 280px, 440px"
                   />
