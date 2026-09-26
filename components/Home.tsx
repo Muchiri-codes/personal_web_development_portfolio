@@ -37,12 +37,17 @@ export const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (isInView) {
-      videoRef.current?.play();
-    } else {
-      videoRef.current?.pause();
+  if (isInView) {
+    const playPromise = videoRef.current?.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((error) => {
+        console.warn("Autoplay prevented or video source not ready:", error);
+      });
     }
-  }, [isInView]);
+  } else {
+    videoRef.current?.pause();
+  }
+}, [isInView]);
 
 return (
   <section
@@ -95,13 +100,14 @@ return (
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
   
-          className="relative z-10 w-full aspect-4/5 sm:aspect-video lg:aspect3/4 xl:aspect-4/5 sm:h-auto rounded-3xl p-0.5 sm:p-1 bg-linear-to-b from-emerald-500/40 to-transparent shadow-2xl overflow-hidden"
+          className="relative z-10 w-full aspect-4/5 sm:aspect-video lg:aspect-3/4 xl:aspect-4/5 sm:h-auto rounded-3xl p-0.5 sm:p-1 bg-linear-to-b from-emerald-500/40 to-transparent shadow-2xl overflow-hidden"
         >
           <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-[#111] relative group">
             <video
               ref={videoRef}
-              src="/creative_process.mp4"
+              src="/videos-optimized/creative_process.mp4"
               playsInline
+              preload='auto'
               muted
               loop
               className="w-full h-full object-cover transition duration-700 opacity-60 hover:opacity-100"

@@ -1,15 +1,12 @@
 "use client";
 
 import { useRef, useState} from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { handleFormSubmission } from '@/action/contact';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { SuccessRibbon } from './ui/successRibbon';
 import { SiGithub, SiWhatsapp, SiGmail } from 'react-icons/si';
 import { FiLinkedin } from 'react-icons/fi';
-import { faGalacticSenate } from '@fortawesome/free-brands-svg-icons';
-
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);

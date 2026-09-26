@@ -326,6 +326,7 @@ export default async function ProjectPage({params}:ProjectPageProps) {
                               src={result.image}
                               alt={result.title}
                               fill
+                              loading="eager"
                               className="object-cover"
                             />
                           </div>

@@ -10,7 +10,6 @@ import { joinWaitlist } from '@/action/join';
 export const Footer = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [showRibbon, setShowRibbon] = useState(false)
   const [popup, setPopup] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
