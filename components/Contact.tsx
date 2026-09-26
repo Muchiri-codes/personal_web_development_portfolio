@@ -1,22 +1,30 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useState} from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { handleFormSubmission } from '@/action/contact';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { SuccessRibbon } from './ui/successRibbon';
 import { SiGithub, SiWhatsapp, SiGmail } from 'react-icons/si';
 import { FiLinkedin } from 'react-icons/fi';
+import { faGalacticSenate } from '@fortawesome/free-brands-svg-icons';
+
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [showRibbon, setShowRibbon] = useState(false)
 
   return (
     <div
       className="relative inset-0 bg-fixed bg-center bg-cover bg-no-repeat"
-      style={{
-        backgroundImage: `url('/contact_mobile.webp')`,
-      }}
+      style={{backgroundImage: `url('/contact_mobile.webp')`,}}
     >
+       <SuccessRibbon
+        show={showRibbon}
+        message="Message received — I'll talk to you shortly! "
+        onClose={() => setShowRibbon(false)}
+      />
       <div className="absolute inset-0 bg-slate-950/70" />
 
       <motion.section
@@ -89,8 +97,11 @@ const Contact = () => {
                 action={async (formData) => {
                   const result = await handleFormSubmission(formData);
                   if (result.success) {
-                    alert("Thank you for reaching out, I will talk to you shortly :) ");
+                    setShowRibbon(true)
                     formRef.current?.reset();
+                    setTimeout(() =>setShowRibbon(false), 5000)
+                  }else {
+                    alert("something went wrong, try again please")
                   }
                 }}
                 className="p-4 md:p-8 rounded-[2.5rem] bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl space-y-6"

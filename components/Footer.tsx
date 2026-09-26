@@ -1,21 +1,45 @@
 "use client";
-import { handleSubmit } from '@/action/handleNetworking';
-import { useState } from 'react';
+
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Linkedin, Twitter, ArrowUp, Mail, Heart } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Github, Linkedin, Twitter, ArrowUp, Mail } from 'lucide-react';
+import { joinWaitlist } from '@/action/join';
 
 export const Footer = () => {
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [showRibbon, setShowRibbon] = useState(false)
+  const [popup, setPopup] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const showPopup = (type: 'success' | 'error', text: string) => {
+    setPopup({ type, text });
+    setTimeout(() => setPopup(null), 3500);
+  };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await handleSubmit(name, email);
-    setName('');
-    setEmail('');
-  }
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+
+    const result = await joinWaitlist(formData);
+
+    if (result.success) {
+      showPopup('success', "You're in! Thanks for joining.");
+      setName('');
+      setEmail('');
+    } else {
+      const msg =
+        typeof result.error === 'string'
+          ? result.error
+          : 'Please check your details and try again.';
+      showPopup('error', msg);
+    }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -23,41 +47,46 @@ export const Footer = () => {
 
   return (
     <footer className="border-t border-white/5 pt-20 pb-10 relative overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1px bg-linear-to-r from-transparent via-emerald-500/50 to-transparent" />
+  
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-emerald-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
 
           {/* LEFT: Stay Connected */}
-          <div className="space-y-6 border border-black rounded-3xl">
-            <h4 className="text-yellow-500 font-bold uppercase tracking-widest text-xs p-5">Stay Connected</h4>
+          <div className="space-y-6 border border-white/10 rounded-3xl">
+            <h4 className="text-yellow-500 font-bold uppercase tracking-widest text-xs p-5">
+              Stay Connected
+            </h4>
             <div className="relative w-full justify-between group">
               <h2 className="font-bold text-md px-5 text-gray-400 mb-6">
-                Be sure to join our developers team. send us your name and email address.
+                Be sure to join our developers team. Send us your name and email address.
               </h2>
               <form
+                ref={formRef}
                 onSubmit={onSubmit}
-                className="px-5 py-2 md:p-7 flex-1 ml-2 rounded-[2.5rem] bg-white/2 border border-white/5 backdrop-blur-sm space-y-5 max-w-md mx-auto"
+                className="px-5 py-2 md:p-7 flex-1 ml-2 rounded-[2.5rem] bg-white/5 border border-white/5 backdrop-blur-sm space-y-5 max-w-md mx-auto"
               >
                 <input
-                  type="name"
+                  type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
-                  className="w-full bg-white/5 border border-grey-400 rounded-2xl px-6 py-4 text-sm text-black focus:outline-none focus:border-emerald-500/50 transition-all"
+                  required
+                  className="w-full bg-white/5 border border-gray-500/40 rounded-2xl px-6 py-4 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-emerald-500/50 transition-all"
                 />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="w-full bg-white/5 border border-grey-400 rounded-2xl px-6 py-4 text-sm text-black focus:outline-none focus:border-emerald-500/50 transition-all"
+                  required
+                  className="w-full bg-white/5 border border-gray-500/40 rounded-2xl px-6 py-4 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-emerald-500/50 transition-all"
                 />
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="px-8 py-3 bg-emerald-500 text-black rounded-xl text-xl font-bold hover:bg-emerald-400 transition-colors"
+                    className="px-8 py-3 bg-emerald-500 text-black rounded-xl text-xl font-bold hover:bg-emerald-400 transition-colors active:scale-[0.98]"
                   >
                     Join
                   </button>
@@ -101,12 +130,11 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-white/5 border border-white/5 text-gray-400 hover:text-emerald-500 hover:border-emerald-500/30 transition-all"
                 >
-                  <Icon className="w-10 h-10" />
+                  <Icon className="w-6 h-6" />
                 </a>
               ))}
             </div>
           </div>
-
         </div>
 
         <div className="mb-16">
@@ -139,6 +167,24 @@ export const Footer = () => {
           </button>
         </div>
       </div>
+
+      {/* Success / Error Popup */}
+      <AnimatePresence>
+        {popup && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.25 }}
+            className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-4 rounded-2xl shadow-2xl backdrop-blur-md text-sm font-semibold
+              ${popup.type === 'success'
+                ? 'bg-emerald-500/90 text-black'
+                : 'bg-red-500/90 text-white'}`}
+          >
+            {popup.text}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </footer>
   );
-};   
+};

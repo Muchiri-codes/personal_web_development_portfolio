@@ -21,16 +21,6 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         <div className="flex items-center">
-          <Link href="#home" className="transition-transform hover:scale-115 active:scale-95 shrink-0">
-            <Image
-              className="rounded-full border border-emerald-500/20"
-              src="/logo.webp"
-              alt="logo"
-              width={50}
-              height={50}
-              loading='lazy'
-            />
-          </Link>
           <span className="ml-4 font-black text-white tracking-tighter hidden xs:block">
             DEV<span className="text-emerald-500">.</span>DESIGN
           </span>
