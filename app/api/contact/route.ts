@@ -8,13 +8,13 @@ export async function POST(req: Request) {
   const { name, email } = body;
 
   await resend.emails.send({
-    from: "Jonte <onboarding@yourdomain.com>",
+    from: "Jonte <onboarding@muchirijohnportfolio.netlify.app>",
     to: email,
     subject: "Thank you for reaching out!",
     html: `
       <p>Hi ${name},</p>
       <p>Thank you for connecting. I’ve received your message and will respond soon.</p>
-      <p>Best,<br/>Jonte</p>
+      <p>Best,<br/>John</p>
     `
   });
 
