@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import { handleFormSubmission } from '@/action/email-submission';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { SiGithub, SiWhatsapp, SiGmail } from 'react-icons/si';
