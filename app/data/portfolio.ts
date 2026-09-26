@@ -18,7 +18,7 @@ export const HERO_CONTENT = {
   imagePath: "/profile.jpeg",
   socials: {
     github: "https://github.com/Muchiri-codes",
-    linkedin: "https://linkedin.com/in/John_Muchiri",
+    linkedin: "https://www.linkedin.com/in/john-muchiri-3ba55724b/",
     whatsapp:"https://wa.me/254111884025"
   }
 };
@@ -30,8 +30,8 @@ export const ABOUT_CONTENT = {
     "Today, I help businesses solve complex problems through clean code and user-centric design. Whether it's building a high-performance Next.js application or crafting a brand identity, I focus on quality and impact."
   ],
   stats: [
-    { label: "Years Exp.", value: "4+" },
-    { label: "Projects", value: "30+" }
+    { label: "Years Exp.", value: "3+" },
+    { label: "Projects", value: "20+" }
   ],
   experience: [
     { year: "In Progress", role: "Web mapping", company: "Educational >> Commercial", skills: ["map box", "route navigation", "land use land cover maps", "Indices derivatives eg. NDVI, BSI", "3D data visualization", "Hotspot mapping", "Suitability mapping"] },
@@ -67,10 +67,10 @@ export const SERVICES_LIST = [
     title: "Fullstack Apps",
     desc: "Building robust Next.js applications with scalable backends. My apps are built for effective user journey and an easy to debug code that is scalable incase there is need to upgrade your website coverage.", focus_area: "scale, ease of debugging, databases, self-contained.", deliverable: "customer friendly apps",
     category: "Development",
-    img: "/fullstack.png",
-    img2: "/fullstack_2.jpg",
+    img: "/fullstack.webp",
+    img2: "/fullstack_2.webp",
     gallery: [
-      '/fullstack.png',
+      '/fullstack.webp',
     ]
   },
   {
@@ -80,15 +80,15 @@ export const SERVICES_LIST = [
     focus_area: "Branding, Typography, Layout",
     deliverable: "High-res source files & assets",
     category: "Design",
-    img: "/graphics/bnb.png",
+    img: "/graphics/bnb.webp",
     gallery: [
-      "/graphics/fast_foods.jpg",
-      "/graphics/charity.jpg",
-      "/graphics/company.jpg",
-      "/graphics/orange.jpg",
-      "/graphics/salon.png",
-      "/graphics/surveyor.jpg",
-      "/graphics/hotel.jpg",
+      "/graphics/fast_foods.webp",
+      "/graphics/charity.webp",
+      "/graphics/company.webp",
+      "/graphics/orange.webp",
+      "/graphics/salon.webp",
+      "/graphics/surveyor.webp",
+      "/graphics/hotel.webp",
     ]
   },
 
@@ -98,42 +98,42 @@ export const SERVICES_LIST = [
     desc: "Connecting seamless data flows between 3rd party services. Your website is not complete until there flawless transfter of data from various ends, that is how clients are able to access the data they need from your website and guess what?! That is where an experienced website develper like me is needed.",
     focus_area: "cost, size of data, integration",
     deliverable: "fast, cost effective options",
-    category: "Development", img: "/api.jpg", img2: "/api_2.jpg",
+    category: "Development", img: "/api.webp", img2: "/api_2.webp",
     gallery: [
-      '/api.jpg',
-      '/api_2.jpg'
+      '/api.webp',
+      '/api_2.webp'
     ],
   },
   {
     slug: "performance",
-    title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence. Client journey in your website is a great concern, ever loading websites likely from overloaded packages will definitely discourage the client, Fast navigation is paramount when I am designing my websites. ", focus_area: "speed, customer journey", deliverable: "ultra fast apps with quick navigations", category: "Development", img: "/optimization.png", img2: "/optimization_2.jpg",
+    title: "Performance Opt.", desc: "Ensuring lightning fast load times and SEO excellence. Client journey in your website is a great concern, ever loading websites likely from overloaded packages will definitely discourage the client, Fast navigation is paramount when I am designing my websites. ", focus_area: "speed, customer journey", deliverable: "ultra fast apps with quick navigations", category: "Development", img: "/optimization.webp", img2: "/optimization_2.webp",
     gallery: [
-      '/optimization.png',
-      '/optimization_2.jpg'
+      '/optimization.webp',
+      '/optimization_2.webp'
     ]
   },
 
 
   {
     slug: "ui_ux",
-    title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow. The visual appearance has the ability to attract and keep the client longer as they view what the website has to offer, that is where I come in.", focus_area: "visual appearance, color choice, fonts, images, videos etc.", deliverable: "visually appealing designs that hold your client for long in  your website.", category: "Design", img: "/uiux.mp4", img2: "/ui-ux_2.jpg",
+    title: "UI/UX Design", desc: "User-centric interfaces designed for conversion and flow. The visual appearance has the ability to attract and keep the client longer as they view what the website has to offer, that is where I come in.", focus_area: "visual appearance, color choice, fonts, images, videos etc.", deliverable: "visually appealing designs that hold your client for long in  your website.", category: "Design", img: "/optimized/uiux.mp4", img2: "/ui-ux_2.webp",
     gallery: [
-      '/uiux.mp4',
-      '/ui-ux_2.jpg'
+      '/optimized/uiux.mp4',
+      '/ui-ux_2.webp'
     ]
   },
   {
     slug: "systems_design",
-    title: "Design Systems", desc: "Modular component libraries for brand consistency.", focus_area: "content placement, ease of use by clients, accessibility", deliverable: "proffesional designs that are not only appealing but also easy to use.", category: "Design", img: "/system_design.mp4",
+    title: "Design Systems", desc: "Modular component libraries for brand consistency.", focus_area: "content placement, ease of use by clients, accessibility", deliverable: "proffesional designs that are not only appealing but also easy to use.", category: "Design", img: "/optimized/system_design.mp4",
     gallery: [
-      '/system_design.mp4'
+      '/optimized/system_design.mp4'
     ]
   },
   {
     slug: "responsive",
-    title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", focus_area: "scales, fonts, screen sizes.", deliverable: "Apps that suit all types of screen sizes such as laptops, monitors, mobile phones, tablets etc. ", category: "Design", img: "/responsive_layout.mp4", img2: "/responsive_layout_2.jpg",
+    title: "Responsive Layouts", desc: "Flawless experiences across mobile, tablet, and desktop.", focus_area: "scales, fonts, screen sizes.", deliverable: "Apps that suit all types of screen sizes such as laptops, monitors, mobile phones, tablets etc. ", category: "Design", img: "/optimized/responsive_layout.mp4", img2: "/responsive_layout_2.webp",
     gallery: [
-      '/responsive_layout.mp4'
+      '/optimized/responsive_layout.mp4'
     ]
   },
 
@@ -141,35 +141,35 @@ export const SERVICES_LIST = [
 
   {
     slug: "branding",
-    title: "Visual Branding", desc: "Defining your identity through color, type, and logos. Your logos and choice of colors are as important as the website itself as they are able to define the brand, I balance color and graphics of your website to bring out the visual effect needed. ", focus_area: "visual appearance, scale, fonts, typography, images", deliverable: "high quality brands that are self selling.", category: "Graphics", img: "/visual_branding.jpeg", img2: "/visual_branding_2.jpg",
+    title: "Visual Branding", desc: "Defining your identity through color, type, and logos. Your logos and choice of colors are as important as the website itself as they are able to define the brand, I balance color and graphics of your website to bring out the visual effect needed. ", focus_area: "visual appearance, scale, fonts, typography, images", deliverable: "high quality brands that are self selling.", category: "Graphics", img: "/visual_branding.webp", img2: "/visual_branding_2.webp",
     gallery: [
-      '/visual_branding.jpeg ',
-      '/visual_branding_2.jpg'
+      '/visual_branding.webp ',
+      '/visual_branding_2.webp'
     ]
   },
   {
     slug: "motion_graphics",
-    title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations. Away from the boring static apps, active graphics are not only eye appealing but also an enhancement of the marketability of your business.", focus_area: "scale, animation and screen sizes.", deliverable: "visually appealing animated graphics that altogether hold the client in yoour website long enough to see what your business has to offer", category: "Graphics", img: "/motion_graphics.mp4",
+    title: "Motion Graphics", desc: "Bringing static designs to life with smooth animations. Away from the boring static apps, active graphics are not only eye appealing but also an enhancement of the marketability of your business.", focus_area: "scale, animation and screen sizes.", deliverable: "visually appealing animated graphics that altogether hold the client in yoour website long enough to see what your business has to offer", category: "Graphics", img: "/optimized/motion_graphics.mp4",
     gallery: [
-      '/motion_graphics.mp4'
+      '/optimized/motion_graphics.mp4'
     ]
   },
   {
     slug: "digital_assets",
-    title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals. In this century, wealth is not just held as tangibles, but rather digital assets such as crypto or other virtually owned minerals; With such property, a system for tracking your wealth is handy and that is where I come in.", focus_area: "inclusive dashboards, security, privacy, fast, scalability and feasibility", deliverable: "Highly secure systems that quickly respons to any changes in your digital assets such as crypro-currency", category: "Graphics", img: "/digital_assets.jpeg", img2: '/digital_assets_2.jpg',
+    title: "Digital Assets", desc: "High-quality social media and marketing campaign visuals. In this century, wealth is not just held as tangibles, but rather digital assets such as crypto or other virtually owned minerals; With such property, a system for tracking your wealth is handy and that is where I come in.", focus_area: "inclusive dashboards, security, privacy, fast, scalability and feasibility", deliverable: "Highly secure systems that quickly respons to any changes in your digital assets such as crypro-currency", category: "Graphics", img: "/digital_assets.webp", img2: '/digital_assets_2.webp',
     gallery: [
-      '/digital_assets.jpeg',
-      '/digital_assets_2.jpg'
+      '/digital_assets.webp',
+      '/digital_assets_2.webp'
     ]
   },
 
   {
     slug: "web",
-    title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats. By proffesion, I am a geomatics engineering and geospatial information systems from the Dedan Kimathi university of technology, therefore spatial data analysis such as web mapping is an area of specialization for me.", focus_area: "cartography, databases, speed", deliverable: "interactive web maos that are able to communicate any message that has location stamps in it.", category: "Mapping", img: "/web_mapping.jpeg", img2: '/web_mapping_2.jpg',
+    title: "Web Mapping", desc: "Skills in analysis of geospatial data and presenting complex world data into visually understandable formats. By proffesion, I am a geomatics engineering and geospatial information systems from the Dedan Kimathi university of technology, therefore spatial data analysis such as web mapping is an area of specialization for me.", focus_area: "cartography, databases, speed", deliverable: "interactive web maos that are able to communicate any message that has location stamps in it.", category: "Mapping", img: "/web_mapping.webp", img2: '/web_mapping_2.webp',
     gallery: [
-      '/web_mapping.jpeg',
-      '/web_mapping_2.jpg',
-      '/web_mapping/narumoru_sub.png'
+      '/web_mapping.webp',
+      '/web_mapping_2.webp',
+      '/web_mapping/narumoru_sub.webp'
     ]
   },
 

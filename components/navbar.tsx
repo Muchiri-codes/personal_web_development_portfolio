@@ -24,7 +24,7 @@ export default function Navbar() {
           <Link href="#home" className="transition-transform hover:scale-115 active:scale-95 shrink-0">
             <Image
               className="rounded-full border border-emerald-500/20"
-              src="/logo.png"
+              src="/logo.webp"
               alt="logo"
               width={50}
               height={50}

@@ -7,7 +7,7 @@ export const maps = [
   {
     title: "BSI",
     description: "Highlights exposed soil and bare surfaces.",
-    image: "/indices/bsi.jpg",
+    image: "/indices/bsi.webp",
   },
   {
     title: "Tasseled cap wetness",

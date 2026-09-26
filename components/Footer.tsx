@@ -73,7 +73,7 @@ export const Footer = () => {
           <div className="space-y-6 flex flex-col justify-center">
             <Link href="#home" className="flex items-center gap-3 group">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Logo"
                 width={45}
                 height={45}
@@ -90,9 +90,9 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               {[
-                { Icon: Github, href: "https://github.com/muchiri_codes" },
-                { Icon: Linkedin, href: "https://linkedin.com/in/john muchiri" },
-                { Icon: Twitter, href: "https://twitter.com/yourusername" },
+                { Icon: Github, href: "https://github.com/Muchiri-codes" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/john-muchiri-3ba55724b/" },
+                { Icon: Twitter, href: "#" },
               ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
@@ -124,7 +124,7 @@ export const Footer = () => {
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-600 text-xs font-medium flex items-center gap-2">
             © {new Date().getFullYear()} All rights reserved. Designed by
-            <Link href="https://linkedin.com/in/John_Muchiri">
+            <Link href="https://www.linkedin.com/in/john-muchiri-3ba55724b/">
               <span className="text-orange-600">muchiri</span>
             </Link>
           </p>

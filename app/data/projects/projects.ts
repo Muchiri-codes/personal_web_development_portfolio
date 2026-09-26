@@ -9,7 +9,7 @@ export const projects: Project[] = [
     description:
       "A remote sensing analysis using NDVI to evaluate vegetation patterns and spatial variability.",
 
-    thumbnail: "/indices/ndvi.png",
+    thumbnail: "/indices/ndvi.webp",
 
     software: [
       "Google Earth Engine",

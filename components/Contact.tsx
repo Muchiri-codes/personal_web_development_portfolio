@@ -15,7 +15,7 @@ const Contact = () => {
     <div
       className="relative inset-0 bg-fixed bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('/contact_mobile.jpg')`,
+        backgroundImage: `url('/contact_mobile.webp')`,
       }}
     >
       <div className="absolute inset-0 bg-slate-950/70" />

@@ -52,7 +52,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
           <span className="inline-block px-3 py-1 mb-4 rounded-full bg-white border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-widest">
             {service.category}
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6">{service.title}</h1>
+          <h1 className="text-5xl md:text-7xl text-amber-500 font-black tracking-tighter mb-6">{service.title}</h1>
           <p className="text-gray-400 text-lg md:text-xl max-w-4xl leading-relaxed font-light">
             {service.desc}
           </p>
@@ -61,11 +61,11 @@ export default function ServiceDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mt-12 pt-8 border-t border-white/5">
             <div className="border-l-2 border-emerald-500 pl-4">
               <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500">Focus Area</h4>
-              <p className="text-white text-lg font-medium mt-1 capitalize">{service.focus_area}</p>
+              <p className="text-black text-lg font-medium mt-1 capitalize">{service.focus_area}</p>
             </div>
             <div className="border-l-2 border-emerald-500 pl-4">
               <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500">Key Deliverable</h4>
-              <p className="text-white text-lg font-medium mt-1 capitalize">{service.deliverable}</p>
+              <p className="text-yellow-600 text-lg font-medium mt-1 capitalize">{service.deliverable}</p>
             </div>
           </div>
         </div>

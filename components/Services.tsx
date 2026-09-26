@@ -56,7 +56,7 @@ const ServiceCard = ({ service, index, scrollDir }: ServiceCardProps) => {
           prefetch={false}
           className="group relative aspect-16/9 sm:aspect-4/5 rounded-xl overflow-hidden border transform-gpu will-change-transform tap-highlight-transparent flex flex-col h-full"
         >
-          {/* Media Section: Smaller ratio on mobile (h-1/2 vs sm:h-2/3) */}
+
           <div className="relative w-full h-1/2 sm:h-2/3 overflow-hidden bg-[#0a0a0a]">
             {isVideo ? (
               <video
@@ -86,11 +86,11 @@ const ServiceCard = ({ service, index, scrollDir }: ServiceCardProps) => {
               {service.category}
             </span>
 
-            <h4 className="text-base sm:text-xl font-bold text-white mb-1 sm:mb-2 group-hover:text-black transition-colors px-2">
+            <h4 className="text-base sm:text-xl font-bold text-black mb-1 sm:mb-2 group-hover:text-black transition-colors px-2">
               {service.title}
             </h4>
 
-            <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[90%] line-clamp-2">
+            <p className="text-black text-xs sm:text-sm leading-relaxed max-w-[90%] line-clamp-2">
               {service.desc}
             </p>
           </div>
@@ -125,10 +125,8 @@ export const Services = () => {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-emerald-500 font-bold tracking-widest uppercase text-xs mb-4">
-            What I Do
-          </h2>
-          <h3 className="text-4xl sm:text-5xl font-black text-white tracking-tighter">
+    
+          <h3 className="text-4xl sm:text-5xl font-black text-yellow-500 tracking-tighter">
             My Services
           </h3>
         </motion.div>
