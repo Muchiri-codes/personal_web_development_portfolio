@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <div
       className="relative inset-0 bg-fixed bg-center bg-cover bg-no-repeat"
-      style={{backgroundImage: `url('/contact_mobile.webp')`,}}
+      style={{backgroundImage: `url(https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/contact_mobile.webp)`,}}
     >
        <SuccessRibbon
         show={showRibbon}

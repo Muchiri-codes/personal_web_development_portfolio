@@ -80,15 +80,16 @@ export const SERVICES_LIST = [
     focus_area: "Branding, Typography, Layout",
     deliverable: "High-res source files & assets",
     category: "Design",
-    img: "/graphics/bnb.webp",
+    img: "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/bnb.webp",
     gallery: [
-      "/graphics/fast_foods.webp",
-      "/graphics/charity.webp",
-      "/graphics/company.webp",
-      "/graphics/orange.webp",
-      "/graphics/salon.webp",
-      "/graphics/surveyor.webp",
-      "/graphics/hotel.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/fast_foods.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/charity.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/bnb.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/company.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/orange.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/salon.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/surveyor.webp",
+      "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/hotel.webp",
     ]
   },
 
@@ -126,7 +127,7 @@ export const SERVICES_LIST = [
     slug: "systems_design",
     title: "Design Systems", desc: "Modular component libraries for brand consistency.", focus_area: "content placement, ease of use by clients, accessibility", deliverable: "proffesional designs that are not only appealing but also easy to use.", category: "Design", img: "/optimized/system_design.mp4",
     gallery: [
-      '/optimized/system_design.mp4'
+      'https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/system_design.mp4'
     ]
   },
   {

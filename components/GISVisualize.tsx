@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { maps } from "@/app/data/GIS_visuals";
 
 const desktopPositions = [
@@ -24,10 +23,12 @@ const mobilePositions = [
 export default function GISVisualization() {
   const [offset, setOffset] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.2 });
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout>>(null);
 
+  // --- Mobile detection ---
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 640);
     checkScreen();
@@ -35,16 +36,33 @@ export default function GISVisualization() {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Pause interval when out of view to free up scroll performance
+  // --- Pause carousel while user is scrolling ---
+  const handleScroll = useCallback(() => {
+    setIsScrolling(true);
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = setTimeout(() => setIsScrolling(false), 150);
+  }, []);
+
   useEffect(() => {
-    if (!isInView) return;
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    };
+  }, [handleScroll]);
+
+
+  const isInView = useCarouselInView(sectionRef);
+
+  useEffect(() => {
+    if (!isInView || isScrolling) return;
 
     const interval = setInterval(() => {
       setOffset((prev) => (prev + 1) % maps.length);
     }, 3500);
 
     return () => clearInterval(interval);
-  }, [isInView]);
+  }, [isInView, isScrolling]);
 
   const positions = isMobile ? mobilePositions : desktopPositions;
 
@@ -59,6 +77,8 @@ export default function GISVisualization() {
             const positionIndex =
               (index - offset + positions.length) % positions.length;
             const position = positions[positionIndex];
+            const isCenter = positionIndex === 2;
+            const isOuter = positionIndex === 0 || positionIndex === 4;
 
             return (
               <motion.div
@@ -66,8 +86,9 @@ export default function GISVisualization() {
                 className="absolute left-1/2 top-1/2 w-70 sm:w-90"
                 style={{
                   transformStyle: "preserve-3d",
-                  zIndex: position.z + 500, 
-                  willChange: "transform, opacity", 
+                  zIndex: position.z + 500,
+                  willChange: isCenter ? "transform, opacity" : "auto",
+                  display: isOuter ? "none" : "block",
                 }}
                 animate={{
                   x: `calc(-50% + ${position.x}px)`,
@@ -77,18 +98,16 @@ export default function GISVisualization() {
                   opacity: position.opacity,
                 }}
                 transition={{
-                  duration: 0.8,
-                  ease: [0.32, 0.72, 0, 1], // Smooth cubic-bezier
+                  duration: 0.4,
+                  ease: [0.32, 0.72, 0, 1],
                 }}
               >
                 <div className="relative aspect-3/4 overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 bg-black shadow-2xl">
-                  <Image
+                  <img
                     src={map.image}
                     alt={map.title}
-                    fill
                     loading="lazy"
-                    className="object-contain sm:rounded-2xl rounded-xl"
-                    sizes="(max-width: 640px) 280px, 440px"
+                    className="absolute inset-0 w-full h-full object-contain sm:rounded-2xl rounded-xl"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
@@ -106,3 +125,21 @@ export default function GISVisualization() {
     </section>
   );
 }
+
+function useCarouselInView(ref: React.RefObject<HTMLDivElement | null>) {
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref]);
+
+  return inView;
+}   

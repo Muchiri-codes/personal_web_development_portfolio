@@ -9,7 +9,7 @@ export const projects: Project[] = [
     description:
       "A remote sensing analysis using NDVI to evaluate vegetation patterns and spatial variability.",
 
-    thumbnail: "/indices/ndvi.webp",
+    thumbnail: "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/NDVI.webp",
 
     software: [
       "Google Earth Engine",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
         title: "NDVI Map",
         description:
           "Spatial distribution of vegetation index values.",
-        image: "/projects/ndvi/map.webp",
+        image: "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/NDVI.webp",
       },
     ],
 
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     description:
       "A remote sensing workflow for deriving and interpreting the Bare Soil Index.",
 
-    thumbnail: "/indices/bsi.jpg",
+    thumbnail: "https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/BSI.webp",
 
     software: [
       "Google Earth Engine",
