@@ -1,25 +1,44 @@
 "use client";
 
-import { useRef, useState} from 'react';
+import { useRef, useState, useTransition } from 'react';
 import { motion } from 'framer-motion';
 import { handleFormSubmission } from '@/action/contact';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { SuccessRibbon } from './ui/successRibbon';
 import { SiGithub, SiWhatsapp, SiGmail } from 'react-icons/si';
 import { FiLinkedin } from 'react-icons/fi';
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [showRibbon, setShowRibbon] = useState(false)
+  const [showRibbon, setShowRibbon] = useState(false);
+  const [isPending, startTransition] = useTransition();
+
+  const handleSubmit = async (formData: FormData) => {
+    startTransition(async () => {
+      try {
+        const result = await handleFormSubmission(formData);
+        if (result && result.success) {
+          setShowRibbon(true);
+          formRef.current?.reset();
+          setTimeout(() => setShowRibbon(false), 5000);
+        } else {
+          alert("Something went wrong, please try again.");
+        }
+      } catch (error) {
+        console.error("Submission error:", error);
+        alert("Something went wrong, please try again.");
+      }
+    });
+  };
 
   return (
     <div
       className="relative inset-0 bg-fixed bg-center bg-cover bg-no-repeat"
-      style={{backgroundImage: `url(https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/contact_mobile.webp)`,}}
+      style={{ backgroundImage: `url(https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/contact_mobile.webp)` }}
     >
-       <SuccessRibbon
+      <SuccessRibbon
         show={showRibbon}
-        message="Message received — I'll talk to you shortly! "
+        message="Message received — I'll talk to you shortly!"
         onClose={() => setShowRibbon(false)}
       />
       <div className="absolute inset-0 bg-slate-950/70" />
@@ -32,7 +51,6 @@ const Contact = () => {
         id="contact"
         className="relative z-10 py-24"
       >
-
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
@@ -91,16 +109,7 @@ const Contact = () => {
             <div className="lg:col-span-7">
               <form
                 ref={formRef}
-                action={async (formData) => {
-                  const result = await handleFormSubmission(formData);
-                  if (result.success) {
-                    setShowRibbon(true)
-                    formRef.current?.reset();
-                    setTimeout(() =>setShowRibbon(false), 5000)
-                  }else {
-                    alert("something went wrong, try again please")
-                  }
-                }}
+                action={handleSubmit}
                 className="p-4 md:p-8 rounded-[2.5rem] bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl space-y-6"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -142,6 +151,7 @@ const Contact = () => {
                   <textarea
                     name="message"
                     rows={5}
+                    required
                     placeholder="Tell me about your project..."
                     className="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-gray-400 focus:outline-none focus:border-emerald-500/50 transition-all resize-none backdrop-blur-sm"
                   />
@@ -149,9 +159,10 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full group bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]"
+                  disabled={isPending}
+                  className="w-full group bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-black font-bold py-5 rounded-2xl transition-all flex items-center justify-center space-x-2 active:scale-[0.98]"
                 >
-                  <span>Send Message</span>
+                  <span>{isPending ? 'Sending...' : 'Send Message'}</span>
                 </button>
               </form>
             </div>

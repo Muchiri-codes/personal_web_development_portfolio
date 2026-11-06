@@ -105,7 +105,7 @@ return (
           <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-[#111] relative group">
             <video
               ref={videoRef}
-              src="/videos-optimized/creative_process.mp4"
+              src="https://raw.githubusercontent.com/Muchiri-codes/my-site-assets/main/creative_process.mp4"
               playsInline
               preload='auto'
               muted
