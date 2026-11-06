@@ -1,15 +1,14 @@
-
-import { Code, Paintbrush, Layout, Video } from 'lucide-react';
-import React from 'react';
 import {
   SiReact, SiNextdotjs, SiJavascript, SiTypescript,
   SiMongodb, SiPostgresql, SiTailwindcss, SiShadcnui,
   SiNodedotjs, SiWebpack, SiGithub, SiHtml5,
-   SiGooglesheets, SiFramer,
-  SiMapbox, SiFigma, SiSupabase, SiAutodesk,
-  SiWhatsapp
+  SiGooglesheets, SiFramer, SiMapbox, SiFigma,
+  SiSupabase, SiAutodesk, SiFastapi, SiQgis, 
+   
+  SiExpo, SiPython, SiPandas, SiNumpy, SiScikitlearn, SiPytorch
 } from 'react-icons/si';
-import { FiMap, FiCpu, FiLayers } from 'react-icons/fi';
+import { FiMap, FiShield, FiGlobe, FiFileText, FiLayout } from 'react-icons/fi';
+import { TbBrain } from 'react-icons/tb';
 
 export const HERO_CONTENT = {
   title: "I'm John, a crafter of digital",
@@ -194,7 +193,19 @@ export const TECH_STACK = [
   { name: "Supabase", icon: SiSupabase, color: "green" },
   { name: "Open Layers", icon: FiMap, color: "#1572B6" },
   {name:"Framer motion", icon:SiFramer, color:"#4169E1"},
-  {name:"Map Box", icon:SiMapbox, color:"#4169E1"}
+  {name:"Map Box", icon:SiMapbox, color:"#4169E1"},
+  { name: "React Native", icon: SiReact, color: "#61DAFB" },
+  { name: "Expo Go", icon: SiExpo, color: "#000000" },
+  { name: "FastAPI", icon: SiFastapi, color: "#009688" },
+  { name: "QGIS", icon: SiQgis, color: "#589632" },
+  { name: "ArcGIS Pro", icon: FiGlobe, color: "#005E95" },
+  { name: "Burp Suite", icon: FiShield, color: "#FF6633" },
+  { name: "GeoAI", icon: TbBrain, color: "#A855F7" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "Pandas", icon: SiPandas, color: "#150458" },
+  { name: "NumPy", icon: SiNumpy, color: "#013243" },
+  { name: "Scikit-Learn", icon: SiScikitlearn, color: "#F7931E" },
+  { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" }
 ]
 
 export const CONTACT = [

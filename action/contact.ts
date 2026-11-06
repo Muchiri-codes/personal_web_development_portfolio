@@ -20,16 +20,16 @@ export async function handleFormSubmission(formData: FormData) {
 
   const { name, email, subject, message } = validated.data
 
-  // Save to DB
-  try {
-    db.prepare(
-      `INSERT INTO contact_submissions (name, email, subject, message)
-       VALUES (?, ?, ?, ?)`
-    ).run(name, email, subject, message)
-  } catch (dbError) {
-    console.error('Database error:', dbError)
-    return { success: false, error: 'Failed to save message' }
-  }
+  // // Save to DB
+  // try {
+  //   db.prepare(
+  //     `INSERT INTO contact_submissions (name, email, subject, message)
+  //      VALUES (?, ?, ?, ?)`
+  //   ).run(name, email, subject, message)
+  // } catch (dbError) {
+  //   console.error('Database error:', dbError)
+  //   return { success: false, error: 'Failed to save message' }
+  // }
 
   // Send notification ONLY to yourself
   const apiKey = process.env.RESEND_API_KEY
